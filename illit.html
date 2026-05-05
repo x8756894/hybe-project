@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILLIT</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            color: #2c3e50;
+            background: linear-gradient(#dff3ff, #7fa6b8);
+        }
+
+        .top-bar {
+            background: linear-gradient(135deg, rgba(173, 216, 230, 0.6), rgba(255, 182, 193, 0.6));
+            backdrop-filter: blur(12px);
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-back {
+            background: linear-gradient(45deg, #a0e9ff, #ffd1dc);
+            color: #2c3e50;
+            border: none;
+            font-weight: bold;
+            border-radius: 20px;
+            padding: 6px 14px;
+            transition: 0.3s;
+        }
+
+        header,
+        main,
+        footer {
+            padding: 40px 20px;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #1f4e63;
+        }
+
+        .container-narrow {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .member-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .member-card {
+            width: 180px;
+            border-radius: 16px;
+            overflow: hidden;
+            background: white;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .member-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .member-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .member-name {
+            text-align: center;
+            padding: 8px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            width: 3px;
+            height: 100%;
+            background: #7fa6b8;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            width: 50%;
+            padding: 20px;
+            position: relative;
+        }
+
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-content h5 {
+            margin: 0;
+            color: #1f4e63;
+        }
+
+        .timeline-item::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: #1f4e63;
+            border-radius: 50%;
+            position: absolute;
+            top: 25px;
+        }
+
+        .timeline-item.left::before {
+            right: -6px;
+        }
+
+        .timeline-item.right::before {
+            left: -6px;
+        }
+
+        @media (max-width:768px) {
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                text-align: left;
+                padding-left: 40px;
+            }
+
+            .timeline-item::before {
+                left: 0;
+            }
+        }
+
+        .video {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        iframe {
+            width: 100%;
+            height: 225px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="top-bar">
+        <a href="kpop-hybe-teams.html" class="btn btn-sm btn-back">
+            <i class="fa-solid fa-arrow-left"></i> 回團體頁
+        </a>
+    </div>
+    <header>
+        <h1>ILLIT</h1>
+        <p class="container-narrow" style="text-align:center;">
+            由《R U NEXT?》誕生的韓國女子團體，
+            以夢幻、純真與輕盈感為核心風格。
+        </p>
+    </header>
+
+    <main>
+        <section aria-labelledby="members-title">
+            <h2 id="members-title">成員介紹</h2>
+
+            <div class="member-grid">
+
+                <article class="member-card" data-name="Yunah">
+                    <img src="images/yunah.jpg" alt="Yunah 尹允雅">
+                    <div class="member-name">尹允雅</div>
+                </article>
+
+                <article class="member-card" data-name="Minju">
+                    <img src="images/minju.jpg" alt="Minju 朴敏珠">
+                    <div class="member-name">朴敏珠</div>
+                </article>
+
+                <article class="member-card" data-name="Moka">
+                    <img src="images/moka.jpg" alt="Moka 本田萌香">
+                    <div class="member-name">本田萌香</div>
+                </article>
+
+                <article class="member-card" data-name="Wonhee">
+                    <img src="images/wonhee.jpg" alt="Wonhee 李元喜">
+                    <div class="member-name">李沅禧</div>
+                </article>
+
+                <article class="member-card" data-name="Iroha">
+                    <img src="images/iroha.jpg" alt="Iroha 井上彩羽">
+                    <div class="member-name">井上彩羽</div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="container py-5">
+            <h2 class="text-center mb-5">團體經歷</h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h5>2023</h5>
+                        <p>透過選秀節目《R U NEXT?》誕生</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h5>2024</h5>
+                        <p>正式出道，推出首張專輯</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h5>2024</h5>
+                        <p>〈Magnetic〉爆紅，席捲全球排行榜</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h5>2025</h5>
+                        <p>持續擴展海外市場與音樂風格</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="container py-5">
+            <h3 class="text-center mb-5">代表歌曲</h3>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card bg-dark text-white h-100">
+                        <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                            style="width:100%; height:200px; border:0;">
+                        </iframe>
+
+                        <div class="card-body text-center">
+                            <h5>Magnetic</h5>
+                            <p>ILLIT 出道爆紅代表作</p>
+                            <a href="https://www.youtube.com/watch?v=Vk5-c_v4gMU" target="_blank"
+                                class="btn btn-outline-light btn-sm">
+                                觀看完整 MV
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card bg-dark text-white h-100">
+                        <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                            style="width:100%; height:200px; border:0;">
+                        </iframe>
+
+                        <div class="card-body text-center">
+                            <h5>Lucky Girl Syndrome</h5>
+                            <p>甜美風格代表曲</p>
+                            <a href="https://youtu.be/UCmgGZbfjmk?si=_tpKH4I2iXIozgGI" target="_blank"
+                                class="btn btn-outline-light btn-sm">
+                                觀看完整 MV
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card bg-dark text-white h-100">
+                        <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                            style="width:100%; height:200px; border:0;">
+                        </iframe>
+
+                        <div class="card-body text-center">
+                            <h5>Super Real Me</h5>
+                            <p>夢幻概念歌曲</p>
+                            <a href="https://youtu.be/LVEDH6Z7jfI?si=qqTrFvcblC7aMK01" target="_blank"
+                                class="btn btn-outline-light btn-sm">
+                                觀看完整 MV
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <section class="container py-5">
+        <h3 class="text-center mb-5">MUSIC MESSAGE</h3>
+
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card illit-card p-3 h-100">
+                    <h5>Magnetic</h5>
+                    <p>像被吸引一樣，不自覺靠近你。</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card illit-card p-3 h-100">
+                    <h5>Lucky Girl Syndrome</h5>
+                    <p>今天的我，也會被幸運選中。</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card illit-card p-3 h-100">
+                    <h5>Super Real Me</h5>
+                    <p>做最真實的自己，就已經足夠閃耀。</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer style="text-align:center;opacity:0.6;">
+        © 2026 ILLIT Fan Page
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <script>
+        const memberData = {
+            Yunah: "隊長，穩定領導。",
+            Minju: "氣質清新。",
+            Moka: "甜美魅力。",
+            Wonhee: "夢幻核心。",
+            Iroha: "舞蹈實力強。"
+        };
+
+        $(".member-card").click(function () {
+            let name = $(this).data("name");
+
+            Swal.fire({
+                title: name,
+                text: memberData[name],
+                background: "#e8f6ff",
+                color: "#2c3e50"
+            });
+        });
+    </script>
+</body>
+
+</html>

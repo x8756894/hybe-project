@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTS 防彈少年團</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a0033, #4b0082, #7b2cbf);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .top-bar {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .btn-back {
+            background: linear-gradient(45deg, #7b2cbf, #c77dff);
+            color: white;
+            border: none;
+        }
+
+        .section-title {
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(199, 125, 255, 0.9);
+        }
+
+        .member-layout {
+            position: relative;
+            width: 100%;
+            height: 700px;
+        }
+
+        .member {
+            position: absolute;
+            width: 180px;
+            height: 240px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: 0.3s ease;
+            will-change: transform;
+        }
+
+        .member img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member.main {
+            width: 240px;
+            height: 320px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .m2 {
+            top: 0;
+            left: 15%;
+        }
+
+        .m3 {
+            top: 0;
+            right: 15%;
+        }
+
+        .m4 {
+            bottom: 0;
+            left: 15%;
+        }
+
+        .m5 {
+            bottom: 0;
+            right: 15%;
+        }
+
+        .m6 {
+            top: 35%;
+            left: 5%;
+        }
+
+        .m7 {
+            top: 35%;
+            right: 5%;
+        }
+        
+        .member.sub:hover {
+            transform: scale(1.08);
+        }
+
+        .member.main:hover {
+            transform: translate(-50%, -50%) scale(1.08);
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+            text-align: center;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(#7b2cbf, #c77dff);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            width: 50%;
+            padding: 20px;
+            position: relative;
+        }
+
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: #c77dff;
+            border-radius: 50%;
+            position: absolute;
+            top: 25px;
+        }
+
+        .timeline-item.left::before {
+            right: -6px;
+        }
+
+        .timeline-item.right::before {
+            left: -6px;
+        }
+
+        .card {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: 0;
+        }
+
+        @media (max-width:768px) {
+
+            .member-layout {
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .member,
+            .member.main {
+                position: relative !important;
+                width: 85% !important;
+                max-width: 320px !important;
+                height: 360px !important;
+
+                left: auto !important;
+                top: auto !important;
+                transform: none !important;
+            }
+
+            .m2,
+            .m3,
+            .m4,
+            .m5,
+            .m6,
+            .m7 {
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                text-align: left;
+                padding-left: 40px;
+            }
+
+            .timeline-item::before {
+                left: 0;
+            }
+        }
+
+        @media (hover:none) {
+
+            .member:hover,
+            .card:hover {
+                transform: none !important;
+            }
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            margin-top: 80px;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <a href="kpop-hybe-teams.html" class="btn btn-sm btn-back">
+            <i class="fa-solid fa-arrow-left"></i> 回團體頁
+        </a>
+    </div>
+
+    <section id="s01" class="text-center pb-4">
+        <p style="max-width:700px;margin:auto;opacity:0.85;line-height:1.8;">
+            BTS（防彈少年團）是來自韓國的七人男子團體，
+            以音樂、故事與真誠訊息影響全球。<br><br>
+
+            他們的作品關注青春、成長、自我認同與愛，
+            從《花樣年華》系列到全球爆紅，
+            BTS 不只是偶像，更是一個世代的象徵。
+        </p>
+    </section>
+
+    <section id="s02" class="text-center py-5">
+        <h2 class="section-title wow animate__animated animate__fadeInDown">
+            BTS 防彈少年團
+        </h2>
+        <p class="wow animate__animated animate__fadeIn">
+            💜 I PURPLE YOU 💜
+        </p>
+    </section>
+
+    <section id="s03" class="container">
+        <div class="member-layout">
+            <div class="member main" data-name="RM" data-info="隊長 / 主Rapper / 製作人">
+                <img src="images/rm.jpg">
+                <div class="overlay">
+                    <h4>RM</h4>
+                </div>
+            </div>
+
+            <div class="member sub m2" data-name="Jin" data-info="主唱 / 視覺擔當">
+                <img src="images/jin.jpg">
+                <div class="overlay">
+                    <h6>Jin</h6>
+                </div>
+            </div>
+
+            <div class="member sub m3" data-name="SUGA" data-info="Rapper / 製作人">
+                <img src="images/suga.jpg">
+                <div class="overlay">
+                    <h6>SUGA</h6>
+                </div>
+            </div>
+
+            <div class="member sub m4" data-name="j-hope" data-info="主舞 / Rapper">
+                <img src="images/jhope.jpg">
+                <div class="overlay">
+                    <h6>j-hope</h6>
+                </div>
+            </div>
+
+            <div class="member sub m5" data-name="Jimin" data-info="主舞 / 主唱">
+                <img src="images/jimin.jpg">
+                <div class="overlay">
+                    <h6>Jimin</h6>
+                </div>
+            </div>
+
+            <div class="member sub m6" data-name="V" data-info="主唱 / 低音魅力">
+                <img src="images/v.jpg">
+                <div class="overlay">
+                    <h6>V</h6>
+                </div>
+            </div>
+
+            <div class="member sub m7" data-name="Jungkook" data-info="主唱 / 黃金忙內">
+                <img src="images/jk.jpg">
+                <div class="overlay">
+                    <h6>Jungkook</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s04" class="container py-5">
+        <h2 class="section-title text-center mb-5">成長歷程</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h5>2013</h5>
+                    <p>正式出道《No More Dream》，開始音樂旅程</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h5>2015</h5>
+                    <p>《花樣年華》系列爆紅，開始獲得全球關注</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h5>2017</h5>
+                    <p>登上 Billboard、正式進軍全球市場</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h5>2020</h5>
+                    <p>《Dynamite》獲 Billboard Hot 100 #1</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h5>2022</h5>
+                    <p>成員開始個人活動，開啟新階段</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="s05" class="container py-5">
+        <h3 class="section-title text-center mb-5">代表歌曲</h3>
+
+        <div class="row g-4">
+            <div class="col-md-3 col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>Dynamite</h5>
+                        <p>全球爆紅英文單曲</p>
+                        <a href="https://www.youtube.com/watch?v=gdZLi9oWNZg" target="_blank"
+                            class="btn btn-outline-light btn-sm">觀看 MV</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>Butter</h5>
+                        <p>夏日神曲，席捲排行榜</p>
+                        <a href="https://www.youtube.com/watch?v=WMweEpGlu_U" target="_blank"
+                            class="btn btn-outline-light btn-sm">觀看 MV</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>Spring Day</h5>
+                        <p>經典抒情神曲</p>
+                        <a href="https://www.youtube.com/watch?v=xEeFrLSkMm8" target="_blank"
+                            class="btn btn-outline-light btn-sm">觀看 MV</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>Boy With Luv</h5>
+                        <p>與 Halsey 合作代表作</p>
+                        <a href="https://www.youtube.com/watch?v=XsX3ATc3FbA" target="_blank"
+                            class="btn btn-outline-light btn-sm">觀看 MV</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="text-center py-4">
+        © 2026 BTS Fan Page 💜
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <script>
+        new WOW().init();
+
+        const memberData = {
+            RM: "隊長 / 主Rapper / 製作人\nIQ高、負責團隊方向",
+            Jin: "主唱 / 視覺擔當\n世界級美貌與幽默感",
+            SUGA: "Rapper / 製作人\n音樂才華極高，風格強烈",
+            "j-hope": "主舞 / Rapper\n舞台能量王者",
+            Jimin: "主舞 / 主唱\n情感表現力極強",
+            V: "主唱 / 低音魅力\n獨特聲線與氣質",
+            Jungkook: "主唱 / 黃金忙內\n全能型藝人"
+        };
+
+        $(".member").click(function () {
+            let name = $(this).data("name");
+
+            Swal.fire({
+                title: name,
+                text: memberData[name],
+                background: "#240046",
+                color: "#fff",
+                confirmButtonColor: "#c77dff"
+            });
+        });
+    </script>
+
+</body>
+
+</html>

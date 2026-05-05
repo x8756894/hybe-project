@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯絡我們</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background: #f4f6f9;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .nav-link-custom {
+            color: black;
+            text-decoration: none;
+        }
+
+        .nav-link-custom:hover {
+            color: #6c63ff;
+        }
+
+        .hero {
+            height: 320px;
+            background: linear-gradient(135deg, #111, #2a2a2a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        .contact-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-control:focus {
+            border-color: #6c63ff;
+            box-shadow: none;
+        }
+
+        .btn-primary {
+            background: #6c63ff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #4a47d5;
+        }
+
+        .info-box {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="bg-white py-3 shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <h4><i class="fa-solid fa-music"></i> HYBE</h4>
+
+            <div>
+                <a href="index.html" class="me-3 nav-link-custom">
+                    <i class="fa-solid fa-house"></i> 首頁
+                </a>
+
+                <a href="kpop-hybe-teams.html" class="me-3 nav-link-custom">
+                    <i class="fa-solid fa-users"></i> 藝人
+                </a>
+
+                <a href="hybe-about.html" class="me-3 nav-link-custom">
+                    <i class="fa-solid fa-circle-info"></i> 公司介紹
+                </a>
+
+                <a href="hybe-contact.html" class="nav-link-custom">
+                    <i class="fa-solid fa-envelope"></i> 聯絡我們
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero">
+        <h1 class="animate__animated animate__fadeInDown">聯絡我們</h1>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-7 wow animate__fadeInLeft">
+                    <div class="card contact-card p-4">
+                        <h3 class="mb-3">留下訊息</h3>
+
+                        <input type="text" id="name" class="form-control mb-3" placeholder="姓名">
+                        <input type="email" id="email" class="form-control mb-3" placeholder="Email">
+                        <input type="text" id="subject" class="form-control mb-3" placeholder="主題">
+                        <textarea id="message" class="form-control mb-3" rows="5" placeholder="內容"></textarea>
+
+                        <button class="btn btn-primary w-100" onclick="sendMsg()">
+                            送出訊息
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-md-5 wow animate__fadeInRight">
+
+                    <div class="info-box mb-3">
+                        <h5><i class="fa-solid fa-location-dot"></i> 地址</h5>
+                        <p class="mb-0">韓國首爾 HYBE 本部</p>
+                    </div>
+
+                    <div class="info-box mb-3">
+                        <h5><i class="fa-solid fa-phone"></i> 電話</h5>
+                        <p class="mb-0">+82-2-1234-5678</p>
+                    </div>
+
+                    <div class="info-box mb-3">
+                        <h5><i class="fa-solid fa-envelope"></i> Email</h5>
+                        <p class="mb-0">contact@hybe.com</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h5><i class="fa-solid fa-globe"></i> 社群</h5>
+                        <p class="mb-0">
+                            <i class="fa-brands fa-instagram me-2"></i>
+                            <i class="fa-brands fa-youtube me-2"></i>
+                            <i class="fa-brands fa-facebook"></i>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center text-light py-4" style="background:#111;">
+        © 2026 HYBE Contact Page
+    </footer>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <script>
+        new WOW().init();
+
+        function sendMsg() {
+            let name = $("#name").val();
+            let email = $("#email").val();
+            let subject = $("#subject").val();
+            let message = $("#message").val();
+
+            if (name === "" || email === "" || message === "") {
+                Swal.fire({
+                    icon: "error",
+                    title: "請填寫完整資料"
+                });
+                return;
+            }
+
+            Swal.fire({
+                icon: "success",
+                title: "訊息已送出",
+                text: "我們會盡快回覆你！"
+            });
+
+            $("#name, #email, #subject, #message").val("");
+        }
+    </script>
+
+
+</body>
+
+</html>

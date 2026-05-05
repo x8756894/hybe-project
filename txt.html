@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TXT</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0b1f1a, #123d2f);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .top-bar {
+            background: rgba(0, 0, 0, 0.6);
+            text-align: center;
+            padding: 15px;
+        }
+
+        .btn-back {
+            background: linear-gradient(45deg, #a8ffce, #ffffff);
+            color: black;
+            border: none;
+        }
+
+        .section-title {
+            color: #a8ffce;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(168, 255, 206, 0.6);
+        }
+
+        .member-layout {
+            position: relative;
+            height: 600px;
+            margin-top: 40px;
+        }
+
+        .member {
+            position: absolute;
+            width: 180px;
+            height: 240px;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+
+            transition: transform 0.35s ease;
+            will-change: transform;
+        }
+
+        .member img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 🔥 中間 SOOBIN */
+        .member.main {
+            width: 240px;
+            height: 320px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+        }
+
+        /* 子卡片 hover */
+        .member.sub:hover {
+            transform: scale(1.08);
+        }
+
+        /* 中間卡片 hover（保留置中 + 放大） */
+        .member.main:hover {
+            transform: translate(-50%, -50%) scale(1.08);
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            text-align: center;
+            padding: 5px;
+        }
+
+        .m2 {
+            left: 15%;
+            top: 10%;
+        }
+
+        .m3 {
+            right: 15%;
+            top: 10%;
+        }
+
+        .m4 {
+            left: 20%;
+            bottom: 5%;
+        }
+
+        .m5 {
+            right: 20%;
+            bottom: 5%;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border: none;
+            color: white;
+            backdrop-filter: blur(8px);
+        }
+
+        @media (max-width:768px) {
+
+            .member-layout {
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .member,
+            .member.main {
+                position: relative !important;
+                width: 85% !important;
+                max-width: 320px;
+                height: 360px !important;
+
+                left: auto !important;
+                top: auto !important;
+
+                transform: none !important;
+            }
+
+            .m2,
+            .m3,
+            .m4,
+            .m5 {
+                left: auto !important;
+                right: auto !important;
+                top: auto !important;
+                bottom: auto !important;
+            }
+
+            .timeline-item {
+                width: 100%;
+            }
+        }
+
+        @media (hover:none) {
+            .member:hover {
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        <a href="kpop-hybe-teams.html" class="btn btn-sm btn-back">
+            ← 回團體頁
+        </a>
+    </div>
+
+    <section class="text-center py-5">
+        <h1 class="section-title">TOMORROW X TOGETHER</h1>
+        <p>一起走向明天的少年們</p>
+    </section>
+
+    <div class="container">
+        <h3 class="section-title text-center">成員介紹</h3>
+
+        <div class="member-layout">
+
+            <div class="member main" data-name="SOOBIN" data-info="隊長 / 溫柔穩重">
+                <img src="images/soobin.jpg">
+                <div class="overlay">SOOBIN</div>
+            </div>
+
+            <div class="member sub m2" data-name="YEONJUN" data-info="全能ACE">
+                <img src="images/yeonjun.jpg">
+                <div class="overlay">YEONJUN</div>
+            </div>
+
+            <div class="member sub m3" data-name="BEOMGYU" data-info="氣氛製造者">
+                <img src="images/beomgyu.jpg">
+                <div class="overlay">BEOMGYU</div>
+            </div>
+
+            <div class="member sub m4" data-name="TAEHYUN" data-info="主唱實力派">
+                <img src="images/taehyun.jpg">
+                <div class="overlay">TAEHYUN</div>
+            </div>
+
+            <div class="member sub m5" data-name="HUENINGKAI" data-info="忙內魅力">
+                <img src="images/hueningkai.jpg">
+                <div class="overlay">HUENINGKAI</div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <section class="container py-5">
+        <h3 class="section-title text-center mb-5">代表歌曲</h3>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>CROWN</h5>
+                        <p>出道曲，象徵成長與自我覺醒</p>
+                        <a href="https://www.youtube.com/watch?v=W3iSnJ663II" target="_blank"
+                            class="btn btn-outline-light btn-sm">觀看 MV</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>0X1=LOVESONG</h5>
+                        <p>青春愛與混亂的情緒爆發</p>
+                        <a href="https://www.youtube.com/watch?v=d5bbqKYu51w" target="_blank"
+                            class="btn btn-outline-light btn-sm">觀看 MV</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>Sugar Rush Ride</h5>
+                        <p>誘惑與成長交錯的世界觀</p>
+                        <a href="https://www.youtube.com/watch?v=W3iSnJ663II" target="_blank"
+                            class="btn btn-outline-light btn-sm">觀看 MV</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <h3 class="section-title text-center mb-5">MUSIC MESSAGE</h3>
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card bg-black text-white p-3">
+                    <h5>CROWN</h5>
+                    <p>
+                        描述青春成長的第一步，從迷惘到認識自我，
+                        就像頭上長出「角」的成長痛。
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card bg-black text-white p-3">
+                    <h5>0X1=LOVESONG</h5>
+                    <p>
+                        在混亂世界中找到「唯一的愛」，
+                        是青春最極端也最真實的情緒。
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card bg-black text-white p-3">
+                    <h5>Sugar Rush Ride</h5>
+                    <p>
+                        像甜蜜誘惑般的危險成長，
+                        在慾望與純真之間拉扯。
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <section class="container py-5">
+        <h3 class="section-title text-center mb-5">團體經歷</h3>
+
+        <div class="timeline">
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h5>2019</h5>
+                    <p>TXT 正式出道，發行《CROWN》展開青春世界觀</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h5>2020</h5>
+                    <p>推出《The Dream Chapter》系列，建立世界觀基礎</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h5>2021</h5>
+                    <p>《0X1=LOVESONG》獲得全球關注，人氣大幅提升</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h5>2023</h5>
+                    <p>《Sugar Rush Ride》展現成熟概念與視覺風格</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h5>2024+</h5>
+                    <p>持續拓展全球巡演與青春敘事世界觀</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <h3 class="section-title text-center mb-4">音樂理念</h3>
+
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>CROWN</h5>
+                    <p>成長與自我覺醒</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>0X1=LOVESONG</h5>
+                    <p>青春與愛的混亂</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Sugar Rush Ride</h5>
+                    <p>誘惑與成長的掙扎</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4">
+        © 2026 TXT Fan Page
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <script>
+        new WOW().init();
+
+        $(".member").click(function () {
+            let name = $(this).data("name");
+            let info = $(this).data("info");
+
+            Swal.fire({
+                title: name,
+                text: info,
+                background: "#0b1f1a",
+                color: "#a8ffce",
+                confirmButtonColor: "#a8ffce"
+            });
+        });
+    </script>
+
+</body>
+
+</html>

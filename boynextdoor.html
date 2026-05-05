@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boynextdoor</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            margin: 0;
+            color: #fff;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(77, 166, 255, 0.08), transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(110, 231, 183, 0.08), transparent 40%);
+        }
+
+        .top-bar {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-back {
+            background: linear-gradient(45deg, #4da6ff, #6ee7b7);
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        h1 {
+            color: #4da6ff;
+        }
+
+        .stage {
+            padding: 60px 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .member {
+            width: 170px;
+            height: 240px;
+            border-radius: 18px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+
+            border: 1px solid rgba(77, 166, 255, 0.3);
+            box-shadow: 0 0 20px rgba(77, 166, 255, 0.2);
+
+            transition: 0.4s;
+        }
+
+        .member:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .main {
+            width: 220px;
+            height: 320px;
+            border: 2px solid #6ee7b7;
+            box-shadow: 0 0 30px #6ee7b7;
+        }
+
+        .member img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 8px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(#4da6ff, #6ee7b7);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            width: 50%;
+            padding: 20px;
+            position: relative;
+        }
+
+        .left {
+            left: 0;
+            text-align: right;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: #4da6ff;
+            border-radius: 50%;
+            position: absolute;
+            top: 25px;
+        }
+
+        .left::before {
+            right: -6px;
+        }
+
+        .right::before {
+            left: -6px;
+        }
+
+        .card {
+            background: #111827;
+            border: 1px solid rgba(77, 166, 255, 0.2);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 20px rgba(110, 231, 183, 0.4);
+        }
+
+        @media (max-width:992px) {
+            .row {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+
+            .member {
+                width: 150px;
+                height: 210px;
+            }
+        }
+
+        @media (max-width:768px) {
+            .row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .member {
+                width: 80%;
+                height: 300px;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                text-align: left;
+                padding-left: 40px;
+            }
+
+            .timeline-item::before {
+                left: 0;
+            }
+        }
+
+        @media (max-width:480px) {
+            .member {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar text-center py-3">
+        <a href="kpop-hybe-teams.html" class="btn btn-sm btn-back">
+            <i class="fa-solid fa-arrow-left"></i> 回團體頁
+        </a>
+    </div>
+
+    <div class="container text-center">
+        <h1>BOYNEXTDOOR</h1>
+        <p>像鄰家男孩一樣自然、真誠的青春故事。</p>
+    </div>
+
+    <div class="stage">
+
+        <div class="row">
+            <div class="member" data-name="Jaehyun">
+                <img src="images/jaehyun.jpg">
+                <div class="overlay">Jaehyun</div>
+            </div>
+
+            <div class="member main" data-name="Sungho">
+                <img src="images/sungho.jpg">
+                <div class="overlay">Sungho</div>
+            </div>
+
+            <div class="member" data-name="Riwoo">
+                <img src="images/riwoo.jpg">
+                <div class="overlay">Riwoo</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="member" data-name="Taesan">
+                <img src="images/taesan.jpg">
+                <div class="overlay">Taesan</div>
+            </div>
+
+            <div class="member" data-name="Leehan">
+                <img src="images/leehan.jpg">
+                <div class="overlay">Leehan</div>
+            </div>
+
+            <div class="member" data-name="Woonhak">
+                <img src="images/woonhak.jpg">
+                <div class="overlay">Woonhak</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container text-center mb-5">
+        <h2 style="color:#4da6ff;">團體經歷</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h5>2023</h5>
+                    <p>發行《WHO!》正式出道</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h5>2023</h5>
+                    <p>推出《WHY..》，人氣快速成長</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h5>2024</h5>
+                    <p>持續發展青春敘事音樂</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <section class="container py-5">
+        <h3 class="text-center mb-5" style="color:#6ee7b7;">代表歌曲</h3>
+
+        <div class="row g-4">
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>One and Only</h5>
+                        <p>青春戀愛代表作</p>
+                        <a href="https://www.youtube.com/watch?v=jizAb-SLvtM" target="_blank"
+                            class="btn btn-outline-light btn-sm">
+                            觀看 MV
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>But Sometimes</h5>
+                        <p>青澀與不安的情感</p>
+                        <a href="https://youtu.be/97_-_WugRFA?si=Omklea0HycJhLTwE" target="_blank"
+                            class="btn btn-outline-light btn-sm">
+                            觀看 MV
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>Earth, Wind & Fire</h5>
+                        <p>活潑能量代表曲</p>
+                        <a href="https://youtu.be/u9nP3qXQA4o?si=zd9U9GNXg2_kUs4z" target="_blank"
+                            class="btn btn-outline-light btn-sm">
+                            觀看 MV
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>Serenade</h5>
+                        <p>清新告白風格代表曲</p>
+                        <a href="https://youtu.be/Uyq9OE8lIz8?si=DuYTuu11NrUAPxfr" target="_blank"
+                            class="btn btn-outline-light btn-sm">
+                            觀看 MV
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <h3 class="text-center mb-5" style="color:#6ee7b7;">MUSIC MESSAGE</h3>
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <div class="card text-white p-4 h-100 music-card">
+                    <h5>One and Only</h5>
+                    <p>「喜歡就勇敢說出口。」</p>
+                    <div class="tag">💙 青春告白</div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card text-white p-4 h-100 music-card">
+                    <h5>But Sometimes</h5>
+                    <p>「不完美的我們才是真實。」</p>
+                    <div class="tag">🌙 成長不安</div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card text-white p-4 h-100 music-card">
+                    <h5>Earth, Wind & Fire</h5>
+                    <p>「青春就是要燃燒一次。」</p>
+                    <div class="tag">🔥 能量爆發</div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card text-white p-4 h-100 music-card">
+                    <h5>Serenade</h5>
+                    <p>「喜歡一個人，就像唱一首歌。」</p>
+                    <div class="tag">💌 告白氛圍</div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card text-white p-4 h-100 music-card">
+                    <h5>BOYNEXTDOOR MESSAGE</h5>
+                    <p>
+                        我們不是偶像距離感，而是「隔壁男孩」的故事。<br>
+                        每一首歌都是你生活的一部分。
+                    </p>
+                    <div class="tag">🏡 日常感</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="text-center py-4" style="background:#020617;">
+        <p>© 2026 BOYNEXTDOOR Fan Page</p>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <script>
+        const data = {
+            Jaehyun: "隊長",
+            Sungho: "主唱",
+            Riwoo: "舞蹈",
+            Taesan: "創作",
+            Leehan: "魅力",
+            Woonhak: "忙內"
+        };
+
+        $(".member").click(function () {
+            let name = $(this).data("name");
+
+            Swal.fire({
+                title: name,
+                text: data[name],
+                confirmButtonColor: "#4da6ff"
+            });
+        });
+    </script>
+</body>
+
+</html>

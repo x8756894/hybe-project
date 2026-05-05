@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYBE娛樂公司</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+
+    <style>
+        body {
+            background: #f4f6f9;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .card {
+            width: 300px;
+            height: 320px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-custom {
+            width: 300px;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            transition: 0.3s;
+        }
+
+        @media (max-width: 992px) {
+            .card-custom {
+                width: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .card-custom {
+                width: 80%;
+            }
+        }
+
+        .nav-link-custom {
+            color: black;
+            text-decoration: none;
+        }
+
+        .nav-link-custom i {
+            margin-right: 6px;
+        }
+
+        .nav-link-custom:hover {
+            color: black;
+        }
+
+        .bg-cover {
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero {
+            height: 500px;
+            background: url("images/HYBE.jpeg") center/cover;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            position: relative;
+            z-index: 2;
+            font-size: 3rem;
+        }
+
+        .social-bar {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .social-bar i {
+            font-size: 24px;
+            margin: 10px;
+        }
+
+        .artist-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        #artistWrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        #artistWrapper {
+            scrollbar-width: none;
+        }
+
+        #s01 {
+            background: #ffffff;
+        }
+
+        #s03 {
+            background: #ffffff;
+        }
+
+        #s04 {
+            background: #f8f9fa;
+        }
+
+        #s05 {
+            background: #eef1f7;
+        }
+
+        #s06 {
+            background: linear-gradient(135deg, #111, #2a2a2a);
+        }
+
+        section.bg-primary {
+            background: linear-gradient(135deg, #6c63ff, #4a47d5) !important;
+        }
+
+        .btn-primary {
+            background: #6c63ff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #4a47d5;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="s01" class="bg-white py-3 shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <h4><i class="fa-solid fa-music"></i> HYBE</h4>
+            <div>
+                <a href="index.html" class="me-3 nav-link-custom">
+                    <i class="fa-solid fa-house"></i> 首頁
+                </a>
+
+                <a href="kpop-hybe-teams.html" class="me-3 nav-link-custom">
+                    <i class="fa-solid fa-users"></i> 藝人
+                </a>
+
+                <a href="hybe-about.html" class="me-3 nav-link-custom">
+                    <i class="fa-solid fa-circle-info"></i> 公司介紹
+                </a>
+
+                <a href="hybe-contact.html" class="nav-link-custom">
+                    <i class="fa-solid fa-envelope"></i> 聯絡我們
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="s02" class="hero position-relative">
+        <h1 class="animate__animated animate__fadeInDown animate__slow" style="animation-delay:1s;">HYBE 娛樂公司</h1>
+    </section>
+
+    <section id="s03">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 animate__animated animate__fadeInLeft">
+                    <h2>關於 HYBE</h2>
+                    <p>
+                        HYBE（前身 Big Hit Entertainment）是韓國頂尖娛樂公司之一，
+                        透過 BTS 等藝人，成功將 K-POP 推向世界舞台。
+                    </p>
+                    <p>
+                        公司致力於結合音樂、科技與內容產業，
+                        打造全球娛樂平台。
+                    </p>
+                </div>
+
+                <div class="col-md-6 animate__animated animate__fadeInRight animate__slow"
+                    style="animation-delay:1.5s;">
+                    <img src="images/hybelogo.jpg" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s04">
+        <div class="container position-relative">
+            <h2 class="text-center mb-5">代表藝人</h2>
+
+            <button class="btn btn-dark position-absolute top-50 start-0 translate-middle-y" onclick="scrollArtists(-1)"
+                style="z-index:10;">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div id="artistWrapper" class="d-flex overflow-auto gap-4 px-5" style="scroll-behavior:smooth;">
+
+                <div class="card flex-shrink-0 animate__animated animate__fadeIn animate__slow"
+                    style="animation-delay:1s">
+                    <img src="images/bts.png" class="artist-img">
+                    <div class="card-body text-center">
+                        <h5>BTS</h5>
+                        <p>全球最具影響力 K-POP 團體</p>
+                    </div>
+                </div>
+
+                <div class="card flex-shrink-0 animate__animated animate__fadeIn animate__slow"
+                    style="animation-delay:2s;">
+                    <img src="images/seventeen.png" class="artist-img">
+                    <div class="card-body text-center">
+                        <h5>SEVENTEEN</h5>
+                        <p>自製型男團代表</p>
+                    </div>
+                </div>
+
+                <div class="card flex-shrink-0 animate__animated animate__fadeIn animate__slow"
+                    style="animation-delay:3s;">
+                    <img src="images/le-sserafim.jpg" class="artist-img">
+                    <div class="card-body text-center">
+                        <h5>LE SSERAFIM</h5>
+                        <p>實力派女團・強調自信與成長</p>
+                    </div>
+                </div>
+
+                <div class="card flex-shrink-0 animate__animated animate__fadeIn animate__slow"
+                    style="animation-delay:4s;">
+                    <img src="images/txt.jpg" class="artist-img">
+                    <div class="card-body text-center">
+                        <h5>TXT</h5>
+                        <p>青春系代表男團</p>
+                    </div>
+                </div>
+
+                <div class="card flex-shrink-0 animate__animated animate__fadeIn animate__slow"
+                    style="animation-delay:5s;">
+                    <img src="images/enhypen.jpg" class="artist-img">
+                    <div class="card-body text-center">
+                        <h5>ENHYPEN</h5>
+                        <p>全球新世代男團</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-dark position-absolute top-50 end-0 translate-middle-y" onclick="scrollArtists(1)"
+                style="z-index:10;">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <div class="text-center mt-5">
+                <a href="kpop-hybe-teams.html" class="btn btn-outline-dark px-4 py-2">
+                    查看更多團體
+                    <i class="fa-solid fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="s05" class="bg-light text-center">
+        <div class="container">
+            <h2 class="mb-5">公司成就</h2>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <h3 class="counter01">2005</h3>
+                    <p>成立年份</p>
+                </div>
+
+                <div class="col-md-3">
+                    <h3 class="counter02">100</h3>
+                    <p>全球藝人</p>
+                </div>
+
+                <div class="col-md-3">
+                    <h3 class="counter03">60</h3>
+                    <p>國家市場</p>
+                </div>
+
+                <div class="col-md-3">
+                    <h3 class="counter04">1000</h3>
+                    <p>粉絲數(百萬)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s05" class="bg-light">
+        <div class="container text-center">
+            <h2 class="mb-5">旗下品牌</h2>
+            <div class="row">
+                <div class="col-md-3">BIGHIT MUSIC</div>
+                <div class="col-md-3">PLEDIS Entertainment</div>
+                <div class="col-md-3">SOURCE MUSIC</div>
+                <div class="col-md-3">ADOR</div>
+            </div>
+        </div>
+    </section>
+    <section id="s06" class="bg-dark text-white text-center">
+        <div class="container">
+            <h2 class="mb-4">熱門作品</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/UBURTj20HXI" frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <section id="s07" class="bg-dark text-white text-center">
+        <div class="container">
+            <h2>簡單問答</h2>
+
+            <input type="text" id="input" class="form-control w-50 mx-auto mt-3">
+            <button onclick="reply()" class="btn btn-primary mt-3">送出</button>
+
+            <div id="chat" class="mt-3"></div>
+        </div>
+    </section>
+
+    <section id="s08" class="text-center bg-primary text-white">
+        <div class="container">
+            <h2>加入 HYBE 世界</h2>
+            <a href="#" class="btn btn-light mt-3">探索更多</a>
+        </div>
+    </section>
+
+    <footer class="text-center text-light py-4" style="background:#111;">
+        © 2026 HYBE Demo
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+
+    <script>
+        new WOW().init();
+
+        $(function () {
+
+            const counterUp = window.counterUp.default;
+
+            const callback = (entries) => {
+                entries.forEach((entry) => {
+                    const el = entry.target;
+
+                    if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+
+                        counterUp(el, {
+                            duration: 2000,
+                            delay: 16,
+                        });
+
+                        el.classList.add('is-visible');
+                    }
+                });
+            };
+
+            const IO = new IntersectionObserver(callback, {
+                threshold: 0.4
+            });
+
+            document.querySelectorAll('.counter01, .counter02, .counter03, .counter04')
+                .forEach(el => IO.observe(el));
+
+        });
+
+        function scrollArtists(direction) {
+            const container = document.getElementById("artistWrapper");
+            const scrollAmount = 320;
+            container.scrollLeft += direction * scrollAmount;
+        }
+
+        function reply() {
+            let input = document.getElementById("input").value.toLowerCase();
+            let chat = document.getElementById("chat");
+
+            let ans = "";
+
+            if (input.includes("bts")) {
+                ans = "BTS 是 HYBE 最成功的團體！";
+            } else if (input.includes("hybe")) {
+                ans = "HYBE 是全球娛樂公司！";
+            } else {
+                ans = "再試試其他問題吧！";
+            }
+
+            chat.innerHTML += "<p>你：" + input + "</p>";
+            chat.innerHTML += "<p>AI：" + ans + "</p>";
+        }
+    </script>
+
+</body>
+
+</html>

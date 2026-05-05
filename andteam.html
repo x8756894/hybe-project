@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&TEAM</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            margin: 0;
+            color: #fff;
+            background: radial-gradient(circle at top, #0b1020, #000);
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(138, 174, 255, 0.08), transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(200, 210, 255, 0.08), transparent 40%);
+            pointer-events: none;
+        }
+
+        .top-bar {
+            background: linear-gradient(135deg, rgba(10, 16, 32, 0.8), rgba(74, 108, 255, 0.2));
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid rgba(138, 174, 255, 0.3);
+        }
+
+        .btn-back {
+            background: linear-gradient(45deg, #4a6cff, #8aaeff);
+            color: #fff;
+            border: none;
+            font-weight: bold;
+            border-radius: 20px;
+            padding: 6px 14px;
+            transition: 0.3s;
+        }
+
+        h1 {
+            color: #8aaeff;
+        }
+
+        .stage {
+            padding: 60px 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .member {
+            width: 170px;
+            height: 240px;
+            border-radius: 18px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            background: #000;
+
+            border: 1px solid rgba(138, 174, 255, 0.3);
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.6),
+                0 0 25px rgba(138, 174, 255, 0.25);
+
+            transition: 0.4s;
+        }
+
+        .member:hover {
+            transform: translateY(-12px) scale(1.08);
+        }
+
+        .main {
+            width: 220px;
+            height: 320px;
+            border: 2px solid #8aaeff;
+            box-shadow: 0 0 35px #8aaeff;
+        }
+
+        .member img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 8px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+        }
+
+        /* ===== Timeline ===== */
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(#8aaeff, #4a6cff);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            width: 50%;
+            padding: 20px;
+            position: relative;
+        }
+
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: rgba(138, 174, 255, 0.08);
+            padding: 15px;
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            transition: 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline-item::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: #8aaeff;
+            border-radius: 50%;
+            position: absolute;
+            top: 25px;
+        }
+
+        .timeline-item.left::before {
+            right: -6px;
+        }
+
+        .timeline-item.right::before {
+            left: -6px;
+        }
+
+        .card {
+            border: 1px solid rgba(138, 174, 255, 0.2);
+            box-shadow: 0 0 15px rgba(138, 174, 255, 0.15);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 25px rgba(138, 174, 255, 0.4);
+        }
+
+        @media (max-width: 992px) {
+
+            .row {
+                gap: 30px;
+                flex-wrap: wrap;
+            }
+
+            .member {
+                width: 150px;
+                height: 210px;
+            }
+
+            .main {
+                width: 200px;
+                height: 280px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .row {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                margin-bottom: 30px;
+            }
+
+            .member {
+                width: 80%;
+                max-width: 260px;
+                height: 300px;
+            }
+
+            .main {
+                width: 85%;
+                max-width: 280px;
+                height: 340px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 14px;
+                padding: 0 10px;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                text-align: left;
+                padding-left: 40px;
+            }
+
+            .timeline-item::before {
+                left: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .member {
+                width: 90%;
+                height: 280px;
+            }
+
+            .main {
+                width: 95%;
+                height: 320px;
+            }
+
+            .overlay {
+                font-size: 14px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="top-bar">
+        <a href="kpop-hybe-teams.html" class="btn btn-sm btn-back">
+            ← 回團體頁
+        </a>
+    </div>
+    <div class="container text-center mb-5">
+        <h1 style="color:#8aaeff;">&TEAM</h1>
+        <p style="max-width:700px;margin:auto;opacity:0.8;">
+            &TEAM 是 HYBE Japan 推出的男子團體，
+            以「狼人 × 群體成長」為核心概念，
+            展現少年在羈絆中成長的故事。
+        </p>
+    </div>
+
+    <div class="stage">
+        <div class="row">
+            <div class="member" data-name="K">
+                <img src="images/k.jpg">
+                <div class="overlay">K</div>
+            </div>
+
+            <div class="member" data-name="Fuma">
+                <img src="images/fuma.jpg">
+                <div class="overlay">Fuma</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="member" data-name="Nicholas">
+                <img src="images/nicholas.jpg">
+                <div class="overlay">Nicholas</div>
+            </div>
+
+            <div class="member main" data-name="EJ">
+                <img src="images/ej.jpg">
+                <div class="overlay">EJ</div>
+            </div>
+
+            <div class="member" data-name="Yuma">
+                <img src="images/yuma.webp">
+                <div class="overlay">Yuma</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="member" data-name="Jo">
+                <img src="images/jo.jpg">
+                <div class="overlay">Jo</div>
+            </div>
+
+            <div class="member" data-name="Harua">
+                <img src="images/harua.jpg">
+                <div class="overlay">Harua</div>
+            </div>
+
+            <div class="member" data-name="Taki">
+                <img src="images/taki.jpg">
+                <div class="overlay">Taki</div>
+            </div>
+
+            <div class="member" data-name="Maki">
+                <img src="images/maki.jpg">
+                <div class="overlay">Maki</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="container text-center mb-5">
+        <h2 style="color:#8aaeff;">團體經歷</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h5>2022</h5>
+                    <p>透過《&AUDITION》組成 &TEAM 並正式出道</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h5>2022</h5>
+                    <p>發行《First Howling : ME》，建立世界觀</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h5>2023</h5>
+                    <p>推出《First Howling : WE》，深化團體敘事</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h5>2023</h5>
+                    <p>發行《First Howling : NOW》，人氣上升</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h5>2024</h5>
+                    <p>拓展海外活動，持續成長</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <section class="container py-5">
+        <h3 class="text-center mb-5" style="color:#8aaeff;">代表歌曲</h3>
+
+        <div class="row g-4">
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>Under the Skin</h5>
+                        <p>出道曲，展現狼人世界觀的起點</p>
+                        <a href="https://youtu.be/0utfT0nbuTA?si=o_NDzQbsGHdrK5i7" target="_blank"
+                            class="btn btn-outline-light btn-sm">
+                            觀看 MV
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>Scent of You</h5>
+                        <p>青春與羈絆的象徵</p>
+                        <a href="https://youtu.be/69IT-53ULZA?si=YfVqxTJONnHLbstr" target="_blank"
+                            class="btn btn-outline-light btn-sm">
+                            觀看 MV
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>Firework</h5>
+                        <p>熱血成長與突破自我</p>
+                        <a href="https://youtu.be/uY-lOn0XwBg?si=ws2oKDsp-YxMnsIC" target="_blank"
+                            class="btn btn-outline-light btn-sm">
+                            觀看 MV
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>War Cry</h5>
+                        <p>展現團隊力量與覺醒</p>
+                        <a href="https://youtu.be/UJaW2Z5DxS8?si=pkhKT1wAWOz2U4LA" target="_blank"
+                            class="btn btn-outline-light btn-sm">
+                            觀看 MV
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <h3 class="text-center mb-5" style="color:#8aaeff;">MUSIC MESSAGE</h3>
+
+        <div class="row g-4">
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card team-card p-3 h-100">
+                    <h5>Under the Skin</h5>
+                    <p>在彼此之下，我們連結成一體。</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card team-card p-3 h-100">
+                    <h5>Scent of You</h5>
+                    <p>氣味會記住我們的羈絆。</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card team-card p-3 h-100">
+                    <h5>Firework</h5>
+                    <p>即使分散，也會一起閃耀。</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card team-card p-3 h-100">
+                    <h5>War Cry</h5>
+                    <p>我們的吶喊，是成長的證明。</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="text-center py-4" style="background: rgba(0,0,0,0.6);">
+
+        <p style="margin:0; opacity:0.7;">
+            © 2026 &TEAM Fan Page
+        </p>
+
+        <p style="font-size:14px; opacity:0.5;">
+            Designed with Moonlight Concept 🌙
+        </p>
+
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <script>
+        const memberData = {
+            K: "隊內核心舞者，舞台掌控力強",
+            Fuma: "穩重領導型角色",
+            Nicholas: "來自台灣，魅力十足",
+            EJ: "隊長，個性溫柔穩定",
+            Yuma: "全能型成員",
+            Jo: "外貌亮眼，成長型",
+            Harua: "可愛魅力代表",
+            Taki: "活潑開朗，舞蹈強",
+            Maki: "主唱實力強"
+        };
+
+        $(".member").click(function () {
+            let name = $(this).data("name");
+
+            Swal.fire({
+                title: name,
+                text: memberData[name],
+                background: "#0b1020",
+                color: "#c9d6ff",
+                confirmButtonColor: "#8aaeff"
+            });
+        });
+    </script>
+
+</body>
+
+</html>

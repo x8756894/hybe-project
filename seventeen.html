@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEVENTEEN</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background: linear-gradient(135deg, #f7a8c4, #7fb3ff);
+            color: #333;
+        }
+
+        .top-bar {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-back {
+            background: linear-gradient(45deg, #f7a8c4, #7fb3ff);
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .music-wrap {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .music-main {
+            text-align: center;
+            padding: 30px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(247, 168, 196, 0.25), rgba(127, 179, 255, 0.2));
+            margin-bottom: 25px;
+        }
+
+        .music-main h4 {
+            color: #fff;
+        }
+
+        .music-main p {
+            font-size: 14px;
+            opacity: 0.85;
+        }
+
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .music-card {
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            transition: 0.3s;
+        }
+
+        .music-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .music-card h5 {
+            margin: 0;
+            color: #7fb3ff;
+        }
+
+        .music-card p {
+            font-size: 13px;
+            margin-top: 5px;
+            opacity: 0.8;
+        }
+
+        .highlight {
+            grid-column: span 2;
+            text-align: center;
+            background: linear-gradient(90deg, #f7a8c4, #7fb3ff);
+            color: white;
+        }
+
+        @media(max-width:768px) {
+            .music-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .highlight {
+                grid-column: span 1;
+            }
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: #fff;
+            margin-top: 40px;
+        }
+
+        .color-section {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .color-box {
+            width: 200px;
+            height: 120px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+        }
+
+        .pink {
+            background: #f7a8c4;
+        }
+
+        .blue {
+            background: #7fb3ff;
+        }
+
+        .members {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .member {
+            width: 150px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .member:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .member img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .member p {
+            margin: 0;
+            padding: 8px;
+            text-align: center;
+            font-weight: bold;
+            background: linear-gradient(90deg, #f7a8c4, #7fb3ff);
+            color: white;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 60px auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(#f7a8c4, #7fb3ff);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            width: 50%;
+            padding: 20px;
+            position: relative;
+        }
+
+        .left {
+            left: 0;
+            text-align: right;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: #f7a8c4;
+            border-radius: 50%;
+            position: absolute;
+            top: 25px;
+        }
+
+        .right::before {
+            left: -6px;
+            background: #7fb3ff;
+        }
+
+        .left::before {
+            right: -6px;
+        }
+
+        @media(max-width:768px) {
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                text-align: left;
+                padding-left: 40px;
+            }
+
+            .timeline-item::before {
+                left: 0;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+    </style>
+    </style>
+
+
+</head>
+
+<body>
+    <div class="top-bar text-center py-3">
+        <a href="kpop-hybe-teams.html" class="btn btn-sm btn-back">
+            <i class="fa-solid fa-arrow-left"></i> 回團體頁
+        </a>
+    </div>
+    <div class="header">
+        <h1>SEVENTEEN</h1>
+    </div>
+
+    <section class="text-center">
+        <h2>成員介紹</h2>
+
+        <div class="members">
+            <div class="member" data-name="S.COUPS" data-info="隊長 / Hip-hop隊長 / 領導力強">
+                <img src="images/S.COUPS.jpg">
+                <p>S.COUPS</p>
+            </div>
+
+            <div class="member" data-name="Jeonghan" data-info="天使系成員 / 聰明又調皮">
+                <img src="images/Jeonghan.jpg">
+                <p>Jeonghan</p>
+            </div>
+
+            <div class="member" data-name="Joshua" data-info="紳士代表 / 溫柔主唱">
+                <img src="images/Joshua.jpg">
+                <p>Joshua</p>
+            </div>
+
+            <div class="member" data-name="Jun" data-info="中國成員 / 表演力強">
+                <img src="images/Jun.jpg">
+                <p>Jun</p>
+            </div>
+
+            <div class="member" data-name="Hoshi" data-info="Performance隊長 / 編舞核心">
+                <img src="images/Hoshi.jpg">
+                <p>Hoshi</p>
+            </div>
+
+            <div class="member" data-name="Wonwoo" data-info="低音Rap / 沉穩魅力">
+                <img src="images/Wonwoo.jpg">
+                <p>Wonwoo</p>
+            </div>
+
+            <div class="member" data-name="Woozi" data-info="主製作人 / Vocal隊長">
+                <img src="images/Woozi.jpg">
+                <p>Woozi</p>
+            </div>
+
+            <div class="member" data-name="DK" data-info="主唱 / 高音王">
+                <img src="images/DK.jpg">
+                <p>DK</p>
+            </div>
+
+            <div class="member" data-name="Mingyu" data-info="門面 / 高挑帥氣">
+                <img src="images/Mingyu.jpg">
+                <p>Mingyu</p>
+            </div>
+
+            <div class="member" data-name="The8" data-info="中國成員 / 現代舞強者">
+                <img src="images/The8.jpg">
+                <p>The8</p>
+            </div>
+
+            <div class="member" data-name="Seungkwan" data-info="主唱 / 綜藝王">
+                <img src="images/Seungkwan.jpg">
+                <p>Seungkwan</p>
+            </div>
+
+            <div class="member" data-name="Vernon" data-info="美韓混血 / 個性Rap">
+                <img src="images/Vernon.jpg">
+                <p>Vernon</p>
+            </div>
+
+            <div class="member" data-name="Dino" data-info="忙內 / 舞蹈實力強">
+                <img src="images/Dino.jpg">
+                <p>Dino</p>
+            </div>
+        </div>
+
+        <section>
+            <h2 class="text-center">團體經歷</h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h5>2015</h5>
+                        <p>正式出道</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h5>2017</h5>
+                        <p>開始國際人氣上升</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h5>2020</h5>
+                        <p>全球巡演成功</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h5>至今</h5>
+                        <p>成為KPOP頂級男團之一</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="container py-5">
+            <h3 class="section-title text-center mb-5">代表歌曲</h3>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card bg-dark text-white h-100">
+                        <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                            style="width:100%; height:200px; border:0;">
+                        </iframe>
+
+                        <div class="card-body text-center">
+                            <h5>Super</h5>
+                            <p>充滿能量的代表作，舞台爆發力極強</p>
+                            <a href="https://www.youtube.com/watch?v=-GQg25oP0S4" target="_blank"
+                                class="btn btn-outline-light btn-sm">
+                                觀看 MV
+                            </a>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card bg-dark text-white h-100">
+                        <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                            style="width:100%; height:200px; border:0;">
+                        </iframe>
+
+                        <div class="card-body text-center">
+                            <h5>HOT</h5>
+                            <p>結合火焰概念的強烈舞台風格</p>
+                            <a href="https://www.youtube.com/watch?v=gRnuFC4Ualw" target="_blank"
+                                class="btn btn-outline-light btn-sm">
+                                觀看 MV
+                            </a>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card bg-dark text-white h-100">
+                        <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                            style="width:100%; height:200px; border:0;">
+                        </iframe>
+
+                        <div class="card-body text-center">
+                            <h5>VERY NICE</h5>
+                            <p>輕快青春感，粉絲必聽經典曲</p>
+                            <a href="https://www.youtube.com/watch?v=J-wFp43XOrA" target="_blank"
+                                class="btn btn-outline-light btn-sm">
+                                觀看 MV
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="container py-5">
+            <h3 class="text-center mb-5">MUSIC MESSAGE</h3>
+
+            <div class="music-wrap">
+                <div class="music-grid">
+                    <div class="music-card">
+                        <h5>Super</h5>
+                        <p>🔥 全力以赴的爆發能量</p>
+                    </div>
+
+                    <div class="music-card">
+                        <h5>HOT</h5>
+                        <p>💥 追夢不怕燃燒自己</p>
+                    </div>
+
+                    <div class="music-card">
+                        <h5>VERY NICE</h5>
+                        <p>🌸 最青春的快樂瞬間</p>
+                    </div>
+
+                    <div class="music-card">
+                        <h5>Don't Wanna Cry</h5>
+                        <p>🌙 成長中的孤單與堅強</p>
+                    </div>
+
+                    <div class="music-card">
+                        <h5>SEVENTEEN CORE MESSAGE</h5>
+                        <p>
+                            「團體不是13個人，而是一起完成舞台的力量」
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <footer class="text-center py-4">
+            © 2026 SEVENTEEN Fan Page
+        </footer>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery-4.0.0.js"></script>
+        <script src="js/sweetalert2@11.js"></script>
+        <script src="js/wow.min.js"></script>
+
+        <script>
+            new WOW().init();
+
+            $(".member").click(function () {
+                let name = $(this).data("name");
+                let info = $(this).data("info");
+
+                Swal.fire({
+                    title: name,
+                    text: info,
+                    background: "linear-gradient(135deg, #f7a8c4, #7fb3ff)",
+                    color: "#fff",
+                    confirmButtonColor: "#7fb3ff"
+                });
+            });
+        </script>
+
+
+</body>
+
+</html>

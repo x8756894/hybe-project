@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYBE 公司介紹</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background: #0f0f1a;
+            color: white;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar a {
+            margin-left: 18px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .navbar a:first-child {
+            margin-left: 0;
+        }
+
+        .nav-link-custom {
+            color: rgb(20, 19, 19);
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        #s01 h4 {
+            color: #111;
+            font-weight: 700;
+        }
+
+        .hero {
+            height: 320px;
+            background: linear-gradient(135deg, #6c63ff, #ff4fd8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 70px 0;
+        }
+
+        .card-dark {
+            background: #1b1b2e;
+            border: none;
+            color: white;
+            border-radius: 15px;
+        }
+
+        .sec-dark {
+            background: #141427;
+            color: white;
+        }
+
+        .card-label {
+            background: #6c63ff;
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+
+        .card-solution {
+            background: #ff4fd8;
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+
+        .card-platform {
+            background: #00d4ff;
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+
+        .card-label:hover,
+        .card-solution:hover,
+        .card-platform:hover {
+            transform: translateY(-10px);
+        }
+
+        .timeline {
+            position: relative;
+            margin: 0 auto;
+            max-width: 900px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(#6c63ff, #ff4fd8);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            width: 50%;
+            padding: 20px;
+            position: relative;
+        }
+
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: #1b1b2e;
+            padding: 20px;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .dot {
+            width: 14px;
+            height: 14px;
+            background: #ff4fd8;
+            border-radius: 50%;
+            position: absolute;
+            top: 25px;
+        }
+
+        .left .dot {
+            right: -7px;
+        }
+
+        .right .dot {
+            left: -7px;
+        }
+
+        @media (max-width:768px) {
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                text-align: left;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .dot {
+                left: 2px !important;
+            }
+        }
+
+        #s01 {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="s01" class="bg-white py-3 shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <h4 class="m-0 d-flex align-items-center gap-2 text-dark fw-bold">
+                <span>🎵</span>
+                <span>HYBE</span>
+            </h4>
+
+            <div>
+                <a href="index.html" class="nav-link-custom">
+                    <i class="fa-solid fa-house"></i> 首頁
+                </a>
+
+                <a href="kpop-hybe-teams.html" class="nav-link-custom">
+                    <i class="fa-solid fa-users"></i> 藝人
+                </a>
+
+                <a href="hybe-about.html" class="nav-link-custom">
+                    <i class="fa-solid fa-circle-info"></i> 公司介紹
+                </a>
+
+                <a href="hybe-contact.html" class="nav-link-custom">
+                    <i class="fa-solid fa-envelope"></i> 聯絡我們
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="s02" class="hero">
+        <h1 class="animate__animated animate__fadeInDown">HYBE ENTERTAINMENT</h1>
+    </section>
+
+    <section id="s03" class="">
+        <div class="container text-center">
+            <h2 class="mb-4">關於 HYBE</h2>
+
+            <p class="lead">
+                HYBE（前身 Big Hit Entertainment）成立於 2005 年，是韓國最具影響力的娛樂公司之一。
+                透過 BTS 帶動全球 K-POP 浪潮，成為國際娛樂產業領導者。
+            </p>
+
+            <p>
+                公司於 2021 年正式更名為 HYBE，並建立「Label / Solution / Platform」三大事業架構，
+                整合音樂製作、藝人經紀與數位娛樂平台。
+            </p>
+        </div>
+    </section>
+
+    <section id="s04" class="sec-dark">
+        <div class="container text-center">
+            <h2 class="mb-5 animate__animated animate__fadeInDown">核心架構</h2>
+
+            <div class="row g-4">
+
+                <div class="col-md-4 animate__animated animate__fadeInLeft animate__slow" style="animation-delay:1s;">
+                    <div class="card-label">
+                        <h4>Label</h4>
+                        <p>藝人管理與音樂製作</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 animate__animated animate__fadeInUp animate__slow" style="animation-delay:1s;">
+                    <div class="card-solution">
+                        <h4>Solution</h4>
+                        <p>內容企劃與娛樂服務</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 animate__animated animate__fadeInRight animate__slow" style="animation-delay:1s;">
+                    <div class="card-platform">
+                        <h4>Platform</h4>
+                        <p>數位平台與粉絲互動系統</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="s05">
+        <div class="container">
+            <h2 class="text-center mb-5 wow animate__animated animate__fadeInDown">公司發展時間軸</h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item left wow animate__animated animate__fadeInLeft" data-wow-delay="0.2s">
+                    <div class="dot"></div>
+                    <div class="timeline-content">
+                        <h5>2005｜公司成立</h5>
+                        <p>Big Hit Entertainment 由方時赫創立，初期以音樂製作與新人培訓為主。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right wow animate__animated animate__fadeInRight" data-wow-delay="0.4s">
+                    <div class="dot"></div>
+                    <div class="timeline-content">
+                        <h5>2010｜開始累積藝人製作能力</h5>
+                        <p>逐漸建立完整製作系統，為 BTS 發展奠定基礎。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left wow animate__animated animate__fadeInLeft" data-wow-delay="0.6s">
+                    <div class="dot"></div>
+                    <div class="timeline-content">
+                        <h5>2013｜BTS 出道</h5>
+                        <p>BTS 出道並逐步累積全球粉絲。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right wow animate__animated animate__fadeInRight" data-wow-delay="0.8s">
+                    <div class="dot"></div>
+                    <div class="timeline-content">
+                        <h5>2016｜全球人氣開始爆發</h5>
+                        <p>登上 Billboard，國際知名度提升。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left wow animate__animated animate__fadeInLeft" data-wow-delay="1s">
+                    <div class="dot"></div>
+                    <div class="timeline-content">
+                        <h5>2018｜全球現象級成功</h5>
+                        <p>成為全球頂尖音樂團體之一。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right wow animate__animated animate__fadeInRight" data-wow-delay="1.2s">
+                    <div class="dot"></div>
+                    <div class="timeline-content">
+                        <h5>2020｜娛樂生態系擴展</h5>
+                        <p>建立 Label / Solution / Platform 架構。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left wow animate__animated animate__fadeInLeft" data-wow-delay="1.4s">
+                    <div class="dot"></div>
+                    <div class="timeline-content">
+                        <h5>2021｜正式更名 HYBE</h5>
+                        <p>轉型為全球娛樂科技公司。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right wow animate__animated animate__fadeInRight" data-wow-delay="1.6s">
+                    <div class="dot"></div>
+                    <div class="timeline-content">
+                        <h5>2022｜多團體時代</h5>
+                        <p>多個團體活躍，形成大型娛樂集團。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left wow animate__animated animate__fadeInLeft" data-wow-delay="1.8s">
+                    <div class="dot"></div>
+                    <div class="timeline-content">
+                        <h5>至今｜全球娛樂平台</h5>
+                        <p>持續拓展全球市場與娛樂科技整合。</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="s06">
+        <div class="container text-center">
+            <h2>旗下藝人</h2>
+            <p>BTS、SEVENTEEN、TXT、ENHYPEN、LE SSERAFIM 等</p>
+        </div>
+    </section>
+
+    <footer class="text-center py-4" style="background:#000;">
+        © 2026 HYBE Demo
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <script>
+        new WOW().init();
+
+    </script>
+
+</body>
+
+</html>

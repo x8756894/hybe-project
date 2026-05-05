@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LE SSERAFIM</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0f2c, #2a0f5a);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .top-bar {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .btn-back {
+            background: linear-gradient(45deg, #4facfe, #a18cd1);
+            border: none;
+            color: #fff;
+        }
+
+        .section-title {
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px rgba(161, 140, 209, 0.8);
+        }
+
+        .member-layout {
+            position: relative;
+            width: 100%;
+            height: 650px;
+        }
+
+        .member {
+            position: absolute;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: 0.3s ease;
+            will-change: transform;
+        }
+
+        .member img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member.main {
+            width: 240px;
+            height: 320px;
+
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .member.sub {
+            width: 180px;
+            height: 240px;
+            opacity: 0.9;
+        }
+
+        .m2 {
+            top: 0;
+            left: 18%;
+        }
+
+        .m3 {
+            top: 0;
+            right: 18%;
+        }
+
+        .m4 {
+            bottom: 0;
+            left: 18%;
+        }
+
+        .m5 {
+            bottom: 0;
+            right: 18%;
+        }
+
+        .member.sub:hover {
+            transform: scale(1.08);
+        }
+
+        .member.main:hover {
+            transform: translate(-50%, -50%) scale(1.08);
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            text-align: center;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(#4facfe, #a18cd1);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            width: 50%;
+            padding: 20px;
+            position: relative;
+        }
+
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: #a18cd1;
+            border-radius: 50%;
+            position: absolute;
+            top: 25px;
+        }
+
+        .timeline-item.left::before {
+            right: -6px;
+        }
+
+        .timeline-item.right::before {
+            left: -6px;
+        }
+
+        .card {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: 0;
+        }
+
+        @media (max-width:768px) {
+
+            .member-layout {
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .member,
+            .member.main {
+                position: relative !important;
+
+                width: 85% !important;
+                max-width: 320px !important;
+                min-width: 0 !important;
+
+                height: 360px !important;
+
+                left: auto !important;
+                top: auto !important;
+
+                transform: none !important;
+            }
+
+            .m2,
+            .m3,
+            .m4,
+            .m5 {
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                text-align: left;
+                padding-left: 40px;
+            }
+
+            .timeline-item::before {
+                left: 0;
+            }
+
+            h2,
+            h3 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+                padding: 0 10px;
+            }
+        }
+
+        @media (hover:none) {
+
+            .member:hover,
+            .card:hover {
+                transform: none !important;
+            }
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        <a href="kpop-hybe-teams.html" class="btn btn-sm btn-back">
+            <i class="fa-solid fa-arrow-left"></i> 回團體頁
+        </a>
+    </div>
+
+    <section class="text-center py-5">
+        <h2 class="section-title">LE SSERAFIM</h2>
+        <p>FEARLESS — 無畏前行的女團</p>
+    </section>
+
+    <div class="container">
+        <div class="member-layout">
+
+            <div class="member main" data-name="金采源" data-info="隊長 / 主唱">
+                <img src="images/chaewon.jpg">
+                <div class="overlay">
+                    <h4>金采源</h4>
+                </div>
+            </div>
+
+            <div class="member sub m2" data-name="宮脇咲良" data-info="舞台魅力強">
+                <img src="images/sakura.jpg">
+                <div class="overlay">
+                    <h6>宮脇咲良</h6>
+                </div>
+            </div>
+
+            <div class="member sub m3" data-name="許允眞" data-info="主唱">
+                <img src="images/yunjin.jpg">
+                <div class="overlay">
+                    <h6>許允眞</h6>
+                </div>
+            </div>
+
+            <div class="member sub m4" data-name="中村一葉" data-info="舞蹈強">
+                <img src="images/kazuha.jpg">
+                <div class="overlay">
+                    <h6>中村一葉</h6>
+                </div>
+            </div>
+
+            <div class="member sub m5" data-name="洪恩採" data-info="忙內">
+                <img src="images/eunchae.jpg">
+                <div class="overlay">
+                    <h6>洪恩採</h6>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <section class="container py-5">
+        <h3 class="section-title text-center mb-5">團體經歷</h3>
+
+        <div class="timeline">
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h5>2022</h5>
+                    <p>發行 FEARLESS 出道</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h5>2022</h5>
+                    <p>ANTIFRAGILE 爆紅</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h5>2023</h5>
+                    <p>UNFORGIVEN 全球發展</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <h3 class="section-title text-center mb-5">代表歌曲</h3>
+
+        <div class="row g-4">
+            <div class="col-md-4 col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>FEARLESS</h5>
+                        <p>出道曲</p>
+                        <a href="https://youtu.be/4vbDFu0PUew?si=bq6s4YRM7XHnkEU0" target="_blank"
+                            class="btn btn-outline-light btn-sm">觀看 MV</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>ANTIFRAGILE</h5>
+                        <p>越挫越強</p>
+                        <a href="https://youtu.be/pyf8cbqyfPs?si=TKQxPdysR808M84V" target="_blank"
+                            class="btn btn-outline-light btn-sm">觀看 MV</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>UNFORGIVEN</h5>
+                        <p>不迎合世界，做自己。</p>
+                        <a href="https://youtu.be/UBURTj20HXI?si=zksm_ZdAl27vz68a" target="_blank"
+                            class="btn btn-outline-light btn-sm">觀看 MV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <h3 class="section-title text-center mb-5">MUSIC MESSAGE</h3>
+
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card bg-black text-white p-3 h-100">
+                    <h5>FEARLESS</h5>
+                    <p>不被過去束縛，自信前行。</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card bg-black text-white p-3 h-100">
+                    <h5>ANTIFRAGILE</h5>
+                    <p>傷害讓我更強。</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card bg-black text-white p-3 h-100">
+                    <h5>UNFORGIVEN</h5>
+                    <p>不迎合世界，做自己。</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="text-center py-4">
+        © 2026 HYBE Fan Page
+    </footer>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <script>
+        new WOW().init();
+
+        $(".member").click(function () {
+            let name = $(this).data("name");
+            let info = $(this).data("info");
+
+            Swal.fire({
+                title: name,
+                text: info,
+                background: "#1c0f3f",
+                color: "#fff",
+                confirmButtonColor: "#a18cd1"
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENHYPEN Vampire Concept</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            margin: 0;
+            color: #fff;
+            background: radial-gradient(circle at top, #1a001f, #000);
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255, 0, 76, 0.08), transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(120, 0, 255, 0.08), transparent 40%);
+            pointer-events: none;
+        }
+
+        .top-bar {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            text-align: center;
+
+            padding: 15px 0;
+        }
+
+        .btn-back {
+            background: linear-gradient(45deg, #ff004c, #800020);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 14px;
+            box-shadow: 0 0 10px rgba(255, 0, 76, 0.6);
+            transition: 0.3s;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        .stage {
+            width: 100%;
+            min-height: 100vh;
+            padding: 60px 20px;
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .member {
+            width: 170px;
+            height: 240px;
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            background: #000;
+
+            border: 1px solid rgba(255, 0, 76, 0.3);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6),
+                0 0 25px rgba(255, 0, 76, 0.25);
+
+            transition: 0.35s ease;
+            transform: translateZ(0);
+        }
+
+        .member img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .main {
+            width: 220px;
+            height: 320px;
+            border: 2px solid #ff004c;
+            box-shadow: 0 0 35px #ff004c;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 8px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+        }
+
+        .member:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .main:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(#ff004c, #800020);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            width: 50%;
+            padding: 20px;
+            position: relative;
+        }
+
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: rgba(255, 0, 76, 0.08);
+            padding: 15px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline-item::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: #ff004c;
+            border-radius: 50%;
+            position: absolute;
+            top: 25px;
+        }
+
+        .timeline-item.left::before {
+            right: -6px;
+        }
+
+        .timeline-item.right::before {
+            left: -6px;
+        }
+
+        @media (max-width:768px) {
+
+            .row {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .member,
+            .main {
+                width: 85% !important;
+                max-width: 280px !important;
+                height: 320px !important;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                text-align: left;
+                padding-left: 40px;
+            }
+
+            .timeline-item::before {
+                left: 0;
+            }
+        }
+
+        @media (hover:none) {
+
+            .member:hover,
+            .main:hover {
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar text-center py-3">
+        <a href="kpop-hybe-teams.html" class="btn btn-sm btn-back">
+            <i class="fa-solid fa-arrow-left"></i> 回團體頁
+        </a>
+    </div>
+    <div class="container text-center mb-5">
+        <h1 style="color:#ff004c;">ENHYPEN</h1>
+        <p style="max-width:700px;margin:auto;opacity:0.8;">
+            由選秀節目 I-LAND 誕生的七人男子團體，
+            以吸血鬼世界觀與黑暗浪漫風格著稱。
+            音樂結合敘事與概念，打造獨特宇宙。
+        </p>
+    </div>
+
+    <div class="stage">
+        <div class="row">
+            <div class="member" data-name="Heeseung">
+                <img src="images/heeseung.jpg">
+                <div class="overlay">李羲承</div>
+            </div>
+
+            <div class="member" data-name="Jay">
+                <img src="images/jay.jpg">
+                <div class="overlay">朴綜星</div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="member" data-name="Jake">
+                <img src="images/jake.jpg">
+                <div class="overlay">沈載倫</div>
+            </div>
+
+            <div class="member main" data-name="Jungwon">
+                <img src="images/jungwon.jpg">
+                <div class="overlay">梁禎元</div>
+            </div>
+
+            <div class="member" data-name="Sunghoon">
+                <img src="images/sunghoon.jpg">
+                <div class="overlay">朴成訓</div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="member" data-name="Sunoo">
+                <img src="images/sunoo.jpg">
+                <div class="overlay">金善禹</div>
+            </div>
+
+            <div class="member" data-name="Ni-Ki">
+                <img src="images/niki.jpg">
+                <div class="overlay">西村力</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container text-center mb-5">
+        <h2 style="color:#ff004c;">團體經歷</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h5>2020</h5>
+                    <p>透過 I-LAND 出道，正式成團</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h5>2021</h5>
+                    <p>發行 BORDER 系列專輯，累積人氣</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h5>2022</h5>
+                    <p>建立完整吸血鬼世界觀</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h5>2023</h5>
+                    <p>DARK BLOOD 概念爆紅</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h5>2024</h5>
+                    <p>展開世界巡演，拓展國際影響力</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <section class="container py-5">
+        <h3 class="section-title text-center mb-5">代表歌曲</h3>
+
+        <div class="row g-4">
+            <div class="col-md-3 col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>Given-Taken</h5>
+                        <p>出道曲，跨越界線的命運</p>
+                        <a href="https://www.youtube.com/watch?v=nQ6wLuYvGd4" target="_blank"
+                            class="btn btn-outline-light btn-sm">觀看 MV</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>Drunk-Dazed</h5>
+                        <p>狂歡與迷失的象徵</p>
+                        <a href="https://www.youtube.com/watch?v=Fc7-Oe0tj5k" target="_blank"
+                            class="btn btn-outline-light btn-sm">觀看 MV</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>Fever</h5>
+                        <p>危險而誘惑的情感</p>
+                        <a href="https://www.youtube.com/watch?v=X7d6Dt17yHk" target="_blank"
+                            class="btn btn-outline-light btn-sm">觀看 MV</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <iframe src="https://www.youtube.com/embed/另一首MVID" allowfullscreen
+                        style="width:100%; height:200px; border:0;">
+                    </iframe>
+
+                    <div class="card-body text-center">
+                        <h5>Bite Me</h5>
+                        <p>吸血鬼敘事巔峰</p>
+                        <a href="https://www.youtube.com/watch?v=wXFLzODIdUI" target="_blank"
+                            class="btn btn-outline-light btn-sm">觀看 MV</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="text-center pb-4" style="opacity:0.6;">
+        © ENHYPEN Vampire Concept Fan Page
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <script>
+        const memberData = {
+            Heeseung: "主唱、全能ACE，聲線乾淨細膩。",
+            Jay: "氣場強烈，舞台魅力爆發。",
+            Jake: "溫柔嗓音，來自澳洲。",
+            Jungwon: "隊長，穩定又成熟。",
+            Sunghoon: "前花滑選手，氣質優雅。",
+            Sunoo: "表情管理之王，可愛與暗黑兼具。",
+            "Ni-Ki": "最年少成員，舞蹈天才。"
+        };
+
+        $(".member").click(function () {
+            let name = $(this).data("name");
+
+            Swal.fire({
+                title: name,
+                text: memberData[name],
+                background: "#120012",
+                color: "#ffb3c6",
+                confirmButtonColor: "#b3003c"
+            });
+        });
+    </script>
+
+</body>
+
+</html>

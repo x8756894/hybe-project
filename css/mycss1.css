@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+body{
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+body{
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+
+:root{
+    --mycolor01: #B2A59F;
+    --mycolor02: #023459;
+    --mycolor03: #1e646e;
+    --mycolor04: #002c2f;
+
+}
+
+.fw-100{
+    font-weight:100px;
+}
+
+.fw{
+    font-weight: 200px;
+}
+
+.fw-300{
+    font-weight: 300px;
+
+}
+
+.fw-400{
+    font-weight: 400px;
+
+}
+
+.fw-500{
+    font-weight: 500px;
+
+}
+
+
+.fw-600{
+    font-weight: 600px;
+
+}
+
+.fw-700{
+    font-weight: 700px;
+
+}
+
+.fw-800{
+    font-weight: 800px;
+
+}
+
+.fw-900{
+    font-weight: 900px;
+
+}
+
+.title-01{
+    font-size: 30px;
+
+    font-weight: 500;
+
+    color: #63709b;
+}
+
+.roller-1{
+    position: relative;
+    overflow: hidden;
+}
+
+.roller-1 .roller-1_box{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(45deg, rgba(228,205,186,0.3)),rgba(214, 107, 20, 0.6);
+    left:-100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left 1s;
+
+}
+
