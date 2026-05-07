@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LE SSERAFIM</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background: #f7f7fb;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            height: 220px;
+            object-fit: contain;
+            background: white;
+            padding: 15px;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #e91e63;
+        }
+
+        .btn-buy {
+            background: #111;
+            color: white;
+        }
+
+        .btn-buy:hover {
+            background: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+
+        <a class="navbar-brand" href="#">
+            💎 LE SSERAFIM SHOP
+        </a>
+
+        <div class="ms-auto position-relative">
+            <a href="cart.html" class="btn btn-outline-light position-relative">
+                <i class="fa-solid fa-cart-arrow-down me-1"></i> 購物車
+
+                <span id="cart-count"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    0
+                </span>
+            </a>
+        </div>
+
+    </nav>
+
+    <section class="text-center py-5 bg-light">
+        <div class="container">
+
+            <h2 class="fw-bold">💎 LE SSERAFIM 官方周邊商品</h2>
+            <p class="text-muted">FEARLESS・UNFORGIVEN・EASY 系列官方周邊</p>
+
+        </div>
+    </section>
+
+    <div class="container py-5">
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center">
+                    <img src="images/le1.jpg" class="w-100">
+                    <div class="card-body">
+                        <h5>LE SSERAFIM 官方手燈</h5>
+                        <p class="price">NT$ 1280</p>
+
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-primary w-50" onclick="buy('lsf_001')">立即購買</button>
+                            <button class="btn btn-outline-secondary w-50"
+                                onclick="addToCart('lsf_001','LE SSERAFIM','官方手燈',1280)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center">
+                    <img src="images/le2.webp" class="w-100">
+                    <div class="card-body">
+                        <h5>CELEBRATION 專輯</h5>
+                        <p class="price">NT$ 650</p>
+
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-primary w-50" onclick="buy('lsf_002')">立即購買</button>
+                            <button class="btn btn-outline-secondary w-50"
+                                onclick="addToCart('lsf_002','LE SSERAFIM','CELEBRATION 專輯',650)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center">
+                    <img src="images/le3.jpg" class="w-100">
+                    <div class="card-body">
+                        <h5>成員寫真組</h5>
+                        <p class="price">NT$ 420</p>
+
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-primary w-50" onclick="buy('lsf_003')">立即購買</button>
+                            <button class="btn btn-outline-secondary w-50"
+                                onclick="addToCart('lsf_003','LE SSERAFIM','成員寫真組',420)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center">
+                    <img src="images/le4.png" class="w-100">
+                    <div class="card-body">
+                        <h5>LE SSERAFIM T-Shirt</h5>
+                        <p class="price">NT$ 890</p>
+
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-primary w-50" onclick="buy('lsf_004')">立即購買</button>
+                            <button class="btn btn-outline-secondary w-50"
+                                onclick="addToCart('lsf_004','LE SSERAFIM','LE SSERAFIM T-Shirt',890)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center">
+                    <img src="images/le5.webp" class="w-100">
+                    <div class="card-body">
+                        <h5>應援毛巾</h5>
+                        <p class="price">NT$ 350</p>
+
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-primary w-50" onclick="buy('lsf_005')">立即購買</button>
+                            <button class="btn btn-outline-secondary w-50"
+                                onclick="addToCart('lsf_005','LE SSERAFIM','應援毛巾',350)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center">
+                    <img src="images/le6.png" class="w-100">
+                    <div class="card-body">
+                        <h5>壓克力立牌</h5>
+                        <p class="price">NT$ 280</p>
+
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-primary w-50" onclick="buy('lsf_006')">立即購買</button>
+                            <button class="btn btn-outline-secondary w-50"
+                                onclick="addToCart('lsf_006','LE SSERAFIM','壓克力立牌',280)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="text-center text-light py-4 bg-dark">
+        © 2026 HYBE Fan Shop - LE SSERAFIM
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

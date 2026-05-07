@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&TEAM</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background: #f4f6f9;
+        }
+
+        #cart-count {
+            font-size: 12px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            height: 220px;
+            object-fit: contain;
+            background: #fff;
+            padding: 15px;
+        }
+
+        .price {
+            color: #6c63ff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+        <a class="navbar-brand" href="#">
+            💙 &TEAM SHOP
+        </a>
+
+        <div class="ms-auto position-relative">
+            <a href="cart.html" class="btn btn-outline-light position-relative">
+                <i class="fa-solid fa-cart-arrow-down"></i> 購物車
+                <span id="cart-count"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    0
+                </span>
+            </a>
+        </div>
+    </nav>
+
+    <section class="text-center">
+        <div class="container">
+            <h2>💙 &TEAM 官方周邊商品</h2>
+            <p>專輯 / 周邊 / 限量商品</p>
+
+            <div class="row g-4 mt-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/andteam_001.jpg">
+                        <div class="card-body">
+                            <h5>&TEAM First Howling 專輯</h5>
+                            <p class="price">$1100</p>
+                            <button class="btn btn-primary" onclick="buy('andteam_001')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('andteam_001','&TEAM','First Howling 專輯',1100)">
+                                加入購物車
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/andteam_002.jpg">
+                        <div class="card-body">
+                            <h5>&TEAM Second Howling 專輯</h5>
+                            <p class="price">$1150</p>
+                            <button class="btn btn-primary" onclick="buy('andteam_002')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('andteam_002','&TEAM','Second Howling 專輯',1150)">
+                                加入購物車
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/andteam_003.jpg">
+                        <div class="card-body">
+                            <h5>&TEAM 官方周邊套組</h5>
+                            <p class="price">$1300</p>
+                            <button class="btn btn-primary" onclick="buy('andteam_003')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('andteam_003','&TEAM','官方周邊套組',1300)">
+                                加入購物車
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

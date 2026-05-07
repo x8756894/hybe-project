@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fromis_9</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background: #f4f6f9;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            height: 220px;
+            object-fit: contain;
+            background: #fff;
+            padding: 15px;
+        }
+
+        .price {
+            color: #ff5fa2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+
+        <a class="navbar-brand" href="#">
+            💗 fromis_9 SHOP
+        </a>
+
+        <div class="ms-auto position-relative">
+            <a href="cart.html" class="btn btn-outline-light position-relative">
+                <i class="fa-solid fa-cart-arrow-down me-1"></i> 購物車
+
+                <span id="cart-count"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    0
+                </span>
+            </a>
+        </div>
+
+    </nav>
+
+    <section class="text-center">
+        <div class="container">
+
+            <h2>💗 fromis_9 官方周邊商品</h2>
+            <p>專輯 / 小卡 / 周邊 / 限量收藏</p>
+
+            <div class="row g-4 mt-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/fromis9_unlock_my_world.jpg">
+                        <div class="card-body">
+                            <h5>Unlock My World 專輯</h5>
+                            <p class="price">$1100</p>
+                            <button class="btn btn-primary" onclick="buy('fromis9_001')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('fromis9_001','fromis_9','Unlock My World 專輯',1100)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/fromis9_lightstick.jpg">
+                        <div class="card-body">
+                            <h5>fromis_9 官方手燈</h5>
+                            <p class="price">$1350</p>
+                            <button class="btn btn-primary" onclick="buy('fromis9_002')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('fromis9_002','fromis_9','fromis_9 官方手燈',1350)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/fromis9_photocard.webp">
+                        <div class="card-body">
+                            <h5>fromis_9 小卡組</h5>
+                            <p class="price">$450</p>
+                            <button class="btn btn-primary" onclick="buy('fromis9_003')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('fromis9_003','fromis_9','fromis_9 小卡組',450)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/fromis9_hoodie.png">
+                        <div class="card-body">
+                            <h5>fromis_9 官方帽T</h5>
+                            <p class="price">$1700</p>
+                            <button class="btn btn-primary" onclick="buy('fromis9_004')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('fromis9_004','fromis_9','fromis_9 官方帽T',1700)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/fromis9_almanac.jpg">
+                        <div class="card-body">
+                            <h5>fromis_9 年曆</h5>
+                            <p class="price">$520</p>
+                            <button class="btn btn-primary" onclick="buy('fromis9_005')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('fromis9_005','fromis_9','fromis_9 海報組',520)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/fromis9_set.jpg">
+                        <div class="card-body">
+                            <h5>fromis_9 限定周邊套組</h5>
+                            <p class="price">$2400</p>
+                            <button class="btn btn-primary" onclick="buy('fromis9_006')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('fromis9_006','fromis_9','fromis_9 限定周邊套組',2400)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/app.js"></script>
+
+
+</body>
+
+</html>

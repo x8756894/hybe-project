@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEVENTEEN 商品頁</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background: #f5f7fb;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            height: 220px;
+            object-fit: contain;
+            background: #fff;
+            padding: 15px;
+        }
+
+        .price {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+
+        <a class="navbar-brand" href="#">
+            💎 SEVENTEEN SHOP
+        </a>
+
+        <div class="ms-auto position-relative">
+            <a href="cart.html" class="btn btn-outline-light position-relative">
+                <i class="fa-solid fa-cart-arrow-down me-1"></i> 購物車
+
+                <span id="cart-count"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    0
+                </span>
+            </a>
+        </div>
+
+    </nav>
+    
+    <section class="text-center">
+        <div class="container">
+
+            <h2>💎 SEVENTEEN 官方周邊商品</h2>
+            <p>FML / SEVENTEENTH HEAVEN / CARAT 專屬收藏</p>
+
+            <div class="row g-4 mt-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/svt_fml_album.jpg">
+                        <div class="card-body">
+                            <h5>FML 專輯（CARAT VER.）</h5>
+                            <p class="price">$1200</p>
+                            <button class="btn btn-primary" onclick="buy('svt_001')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('svt_001','SEVENTEEN','FML 專輯（CARAT VER.）',1200)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/svt_lightstick_ver2.jpg">
+                        <div class="card-body">
+                            <h5>SEVENTEEN 手燈 Ver.2</h5>
+                            <p class="price">$1550</p>
+                            <button class="btn btn-primary" onclick="buy('svt_002')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('svt_002','SEVENTEEN','SEVENTEEN 手燈 Ver.2',1550)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/svt_photocard_carat.jpg">
+                        <div class="card-body">
+                            <h5>CARAT 小卡收藏包</h5>
+                            <p class="price">$480</p>
+                            <button class="btn btn-primary" onclick="buy('svt_003')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('svt_003','SEVENTEEN','CARAT 小卡收藏包',480)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/svt_hoodie_heaven.jpg">
+                        <div class="card-body">
+                            <h5>SEVENTEENTH HEAVEN 官方帽T</h5>
+                            <p class="price">$1800</p>
+                            <button class="btn btn-primary" onclick="buy('svt_004')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('svt_004','SEVENTEEN','SEVENTEENTH HEAVEN 官方帽T',1800)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/svt_poster_concept.webp">
+                        <div class="card-body">
+                            <h5>CONCEPT PHOTO 海報組</h5>
+                            <p class="price">$600</p>
+                            <button class="btn btn-primary" onclick="buy('svt_005')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('svt_005','SEVENTEEN','CONCEPT PHOTO 海報組',600)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/svt_set_deluxe.jpg">
+                        <div class="card-body">
+                            <h5>DELUXE CARAT BOX 套組</h5>
+                            <p class="price">$2800</p>
+                            <button class="btn btn-primary" onclick="buy('svt_006')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('svt_006','SEVENTEEN','DELUXE CARAT BOX',2800)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

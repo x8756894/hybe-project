@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>註冊帳號</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background: #f4f6f9;
+        }
+
+        .box {
+            max-width: 450px;
+            margin: 80px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+        <h3 class="text-center mb-4">會員註冊</h3>
+        <div class="mb-3">
+            <label>帳號 (1~6字)</label>
+            <input type="text" class="form-control" id="username">
+            <div class="error" id="userErr"></div>
+        </div>
+
+        <div class="mb-3">
+            <label>密碼 (2~8字)</label>
+            <input type="password" class="form-control" id="password">
+            <div class="error" id="passErr"></div>
+        </div>
+
+        <div class="mb-3">
+            <label>Email (2~10字)</label>
+            <input type="text" class="form-control" id="email">
+            <div class="error" id="emailErr"></div>
+        </div>
+
+        <button class="btn btn-dark w-100" id="btnRegister">
+            註冊
+        </button>
+
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <script>
+        $(function () {
+
+            $("#btnRegister").click(function () {
+
+                let username = $("#username").val().trim();
+                let password = $("#password").val().trim();
+                let email = $("#email").val().trim();
+
+                let ok = true;
+
+                if (!(username.length >= 1 && username.length <= 6)) ok = false;
+                if (!(password.length >= 2 && password.length <= 8)) ok = false;
+                if (!(email.length >= 2 && email.length <= 10)) ok = false;
+
+                if (ok) {
+
+                    let user = {
+                        username: username,
+                        password: password,
+                        email: email
+                    };
+
+                    localStorage.setItem("user_" + username, JSON.stringify(user));
+
+                    Swal.fire({
+                        icon: 'success',
+                        title: '會員註冊成功',
+                        text: '即將返回原本頁面',
+                        timer: 1500,
+                        showConfirmButton: false
+                    });
+
+                    setTimeout(function () {
+                        let backPage = document.referrer;
+
+                        if (!backPage || backPage.includes("register.html")) {
+                            backPage = "index.html";
+                        }
+
+                        window.location.href = backPage;
+
+                    }, 1500);
+
+                } else {
+
+                    Swal.fire({
+                        icon: 'error',
+                        title: '註冊失敗',
+                        text: '請修正欄位'
+                    });
+
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

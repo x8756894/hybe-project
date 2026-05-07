@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTS</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background: #f4f6f9;
+        }
+
+        #cart-count {
+            font-size: 12px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            height: 220px;
+            object-fit: contain;
+            background: #fff;
+            padding: 15px;
+        }
+
+        .price {
+            color: #6c63ff;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+
+        <a class="navbar-brand" href="#">
+            💜 BTS SHOP
+        </a>
+        <div class="ms-auto position-relative">
+            <a href="cart.html" class="btn btn-outline-light position-relative">
+                <i class="fa-solid fa-cart-arrow-down"></i> 購物車
+                <span id="cart-count"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    0
+                </span>
+            </a>
+        </div>
+    </nav>
+    <section class="text-center">
+        <div class="container">
+            <h2>💜 BTS 官方周邊商品</h2>
+            <p>專輯 / 手燈 / BT21 / 限量周邊</p>
+
+            <div class="row g-4 mt-4">
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/bts-proof.jpg">
+                        <div class="card-body">
+                            <h5>BTS 精選專輯 PROOF</h5>
+                            <p class="price">$1200</p>
+                            <button class="btn btn-primary" onclick="buy('bts_001')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('bts_001','BTS','PROOF 精選專輯',1200)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/bts_lightstick.jpg">
+                        <div class="card-body">
+                            <h5>BTS 官方手燈 Ver.4</h5>
+                            <p class="price">$1398</p>
+                            <button class="btn btn-primary" onclick="buy('bts_002')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('bts_002','BTS','BTS 官方手燈 Ver.4',1398)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/bt21.jpg">
+                        <div class="card-body">
+                            <h5>BT21 娃娃吊飾</h5>
+                            <p class="price">$680</p>
+                            <button class="btn btn-primary" onclick="buy('bts_003')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('bts_003','BTS','BT21 娃娃吊飾',680)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/bts_hoodie.png">
+                        <div class="card-body">
+                            <h5>BTS 官方帽T</h5>
+                            <p class="price">$1800</p>
+                            <button class="btn btn-primary" onclick="buy('bts_004')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('bts_004','BTS','BTS 官方帽T',1800)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/bts_poster.jpg">
+                        <div class="card-body">
+                            <h5>BTS 海報組</h5>
+                            <p class="price">$500</p>
+                            <button class="btn btn-primary" onclick="buy('bts_005')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('bts_005','BTS','BTS 海報組',500)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/bts_set.jpg">
+                        <div class="card-body">
+                            <h5>BTS 周邊限定套組</h5>
+                            <p class="price">$2500</p>
+                            <button class="btn btn-primary" onclick="buy('bts_006')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('bts_006','BTS','BTS 周邊限定套組',2500)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+        function buy(id) {
+
+            const product = products.find(p => p.id === id);
+
+            if (!product) return;
+
+            addToCart(
+                product.id,
+                product.group,
+                product.name,
+                product.price
+            );
+
+            window.location.href = "cart.html";
+        }
+
+        function updateCartCount() {
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            let count = 0;
+
+            cart.forEach(item => {
+                count += item.qty;
+            });
+
+            let badge = document.getElementById("cart-count");
+
+            if (badge) {
+                badge.innerText = count;
+            }
+
+            updateCartCount();
+        }
+    </script>
+
+</body>
+
+</html>

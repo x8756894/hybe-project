@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILLIT 商品頁</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background: #f7f7ff;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .card img {
+            height: 220px;
+            object-fit: contain;
+            background: #fff;
+            padding: 15px;
+        }
+
+        .price {
+            color: #6a5cff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+
+        <a class="navbar-brand" href="#">
+            💜 ILLIT SHOP
+        </a>
+
+        <div class="ms-auto position-relative">
+            <a href="cart.html" class="btn btn-outline-light position-relative">
+                <i class="fa-solid fa-cart-arrow-down me-1"></i> 購物車
+
+                <span id="cart-count"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    0
+                </span>
+            </a>
+        </div>
+
+    </nav>
+    <section class="text-center">
+        <div class="container">
+
+            <h2>💜 ILLIT 官方周邊商品</h2>
+            <p>SUPER REAL ME 系列 / 收藏周邊 / 限量版</p>
+
+            <div class="row g-4 mt-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/illit_album_real_me.jpg">
+                        <div class="card-body">
+                            <h5>SUPER REAL ME 專輯（REAL VER.）</h5>
+                            <p class="price">$1090</p>
+                            <button class="btn btn-primary" onclick="buy('illit_001')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('illit_001','ILLIT','SUPER REAL ME 專輯（REAL VER.）',1090)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/illit_lightstick_dream.jpg">
+                        <div class="card-body">
+                            <h5>ILLIT DREAM LIGHT 官方手燈</h5>
+                            <p class="price">$1380</p>
+                            <button class="btn btn-primary" onclick="buy('illit_002')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('illit_002','ILLIT','ILLIT DREAM LIGHT 官方手燈',1380)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/illit_photocard_dreamy.jpg">
+                        <div class="card-body">
+                            <h5>ILLIT DREAMY 小卡包</h5>
+                            <p class="price">$450</p>
+                            <button class="btn btn-primary" onclick="buy('illit_003')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('illit_003','ILLIT','ILLIT DREAMY 小卡包',450)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/illit_hoodie_pink.png">
+                        <div class="card-body">
+                            <h5>PINK MOOD 官方帽T</h5>
+                            <p class="price">$1650</p>
+                            <button class="btn btn-primary" onclick="buy('illit_004')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('illit_004','ILLIT','PINK MOOD 官方帽T',1650)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/illit_poster_glow.jpg">
+                        <div class="card-body">
+                            <h5>GLOW 海報組</h5>
+                            <p class="price">$520</p>
+                            <button class="btn btn-primary" onclick="buy('illit_005')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('illit_005','ILLIT','GLOW 海報組',520)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/illit_set_invition.jpg">
+                        <div class="card-body">
+                            <h5>ILLIT COLLECTION 邀請卡組</h5>
+                            <p class="price">$2550</p>
+                            <button class="btn btn-primary" onclick="buy('illit_006')">立即購買</button>
+                            <button class="btn btn-outline-secondary"
+                                onclick="addToCart('illit_006','ILLIT','ILLIT COLLECTION 禮盒套組',2550)">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
