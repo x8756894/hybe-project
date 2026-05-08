@@ -214,47 +214,58 @@
 
 <body>
     <section id="s01" class="bg-white py-3 shadow-sm">
-        <div class="container d-flex justify-content-between flex-wrap align-items-center">
-            <h4><i class="fa-solid fa-music"></i> HYBE</h4>
-            <div>
-                <a href="index.html" class="me-3 nav-link-custom">
+        <div class="container d-flex align-items-center justify-content-between flex-wrap">
+            <h4 class="m-0">
+                <i class="fa-solid fa-music"></i> HYBE
+            </h4>
+
+            <div class="d-flex align-items-center gap-4 flex-wrap justify-content-center">
+
+                <a href="index.html" class="nav-link-custom">
                     <i class="fa-solid fa-house"></i> 首頁
                 </a>
 
-                <div class="dropdown d-inline-block me-3">
-                    <a class="nav-link-custom dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                <div class="dropdown">
+                    <a class="nav-link-custom dropdown-toggle" href="#" data-bs-toggle="dropdown">
                         <i class="fa-solid fa-users"></i> 藝人
                     </a>
 
                     <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item" href="kpop-hybe-teams.html">
-                                團體介紹
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="hybe-merch.html">
-                                相關周邊
-                            </a>
-                        </li>
+                        <li><a class="dropdown-item" href="kpop-hybe-teams.html">團體介紹</a></li>
+                        <li><a class="dropdown-item" href="hybe-merch.html">相關周邊</a></li>
                     </ul>
                 </div>
 
-                <a href="hybe-about.html" class="me-3 nav-link-custom">
-                    <i class="fa-solid fa-circle-info"></i> 公司介紹
+                <a href="hybe-about.html" class="nav-link-custom">
+                    公司介紹
                 </a>
 
                 <a href="hybe-contact.html" class="nav-link-custom">
-                    <i class="fa-solid fa-envelope"></i> 聯絡我們
-                </a>
-
-                <a href="register.html" class="btn btn-dark btn-sm">
-                    <i class="fa-solid fa-user-plus"></i> 註冊
-                </a>
-                <a href="login.html" class="btn btn-outline-dark btn-sm me-2">
-                    <i class="fa-solid fa-right-to-bracket"></i> 登入
+                    聯絡我們
                 </a>
             </div>
+
+            <div class="d-flex align-items-center gap-2">
+
+                <div id="guestBox">
+                    <a href="register.html" class="btn btn-dark btn-sm">
+                        註冊
+                    </a>
+
+                    <a href="login.html" class="btn btn-outline-dark btn-sm">
+                        登入
+                    </a>
+                </div>
+
+                <div id="userBox" style="display:none;">
+                    歡迎 <b id="showUser"></b>
+                    <button class="btn btn-danger btn-sm ms-2" onclick="logout()">
+                        登出
+                    </button>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
@@ -431,6 +442,7 @@
     <script src="js/sweetalert2@11.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+    <script src="js/login.js"></script>
 
     <script>
         new WOW().init();
