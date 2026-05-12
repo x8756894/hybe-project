@@ -28,6 +28,7 @@
         .nav-link-custom {
             color: black;
             text-decoration: none;
+            margin-right: 10px;
         }
 
         .nav-link-custom i {
@@ -39,6 +40,7 @@
         }
 
         .card {
+            height: 100%;
             border: none;
             border-radius: 15px;
             overflow: hidden;
@@ -72,6 +74,23 @@
 
         .subtitle {
             color: #666;
+        }
+
+        @media (max-width: 768px) {
+
+            #s01 .container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+                text-align: center;
+            }
+
+            #s01 .container>div {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
         }
     </style>
 </head>
@@ -138,6 +157,9 @@
             <h2 class="main-title animate__animated animate__fadeInDown">
                 HYBE 旗下團體（部分）
             </h2>
+            <p class="subtitle mb-5 animate__animated animate__fadeIn">
+                點擊卡片購買商品
+            </p>
 
             <div class="row g-4">
 
