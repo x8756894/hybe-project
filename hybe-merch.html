@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HYBE旗下團體相關周邊</title>
+
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/mycss1.css">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/table-rwd.css">
+
     <style>
         body {
             background: #f4f6f9;
@@ -66,12 +68,6 @@
             display: block;
         }
 
-        .top-bar {
-            background: #111;
-            color: white;
-            padding: 15px 0;
-        }
-
         .subtitle {
             color: #666;
         }
@@ -97,7 +93,9 @@
 
 <body>
     <section id="s01" class="bg-white py-3 shadow-sm">
+
         <div class="container d-flex align-items-center justify-content-between flex-wrap">
+
             <h4 class="m-0">
                 <i class="fa-solid fa-music"></i> HYBE
             </h4>
@@ -109,14 +107,28 @@
                 </a>
 
                 <div class="dropdown">
+
                     <a class="nav-link-custom dropdown-toggle" href="#" data-bs-toggle="dropdown">
+
                         <i class="fa-solid fa-users"></i> 藝人
                     </a>
 
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="kpop-hybe-teams.html">團體介紹</a></li>
-                        <li><a class="dropdown-item" href="hybe-merch.html">相關周邊</a></li>
+
+                        <li>
+                            <a class="dropdown-item" href="kpop-hybe-teams.html">
+                                團體介紹
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="hybe-merch.html">
+                                相關周邊
+                            </a>
+                        </li>
+
                     </ul>
+
                 </div>
 
                 <a href="hybe-about.html" class="nav-link-custom">
@@ -126,11 +138,13 @@
                 <a href="hybe-contact.html" class="nav-link-custom">
                     聯絡我們
                 </a>
+
             </div>
 
             <div class="d-flex align-items-center gap-2">
 
                 <div id="guestBox">
+
                     <a href="register.html" class="btn btn-dark btn-sm">
                         註冊
                     </a>
@@ -138,175 +152,211 @@
                     <a href="login.html" class="btn btn-outline-dark btn-sm">
                         登入
                     </a>
+
                 </div>
 
                 <div id="userBox" style="display:none;">
+
                     歡迎 <b id="showUser"></b>
+
                     <button class="btn btn-danger btn-sm ms-2" onclick="logout()">
+
                         登出
+
                     </button>
+
                 </div>
 
             </div>
 
         </div>
+
     </section>
+
     <section>
+
         <div class="container text-center">
 
             <h2 class="main-title animate__animated animate__fadeInDown">
                 HYBE 旗下團體（部分）
             </h2>
+
             <p class="subtitle mb-5 animate__animated animate__fadeIn">
                 點擊卡片購買商品
             </p>
 
             <div class="row g-4">
-
                 <div class="col-md-4 wow animate__animated animate__fadeInUp">
-                    <a href="bts-product.html" class="card-link">
-                        <div class="card shadow-sm">
+
+                    <div class="card shadow-sm">
+
+                        <a href="bts.html" class="card-link">
+
                             <img src="images/bts.png">
+
                             <div class="card-body text-center">
+
                                 <h5>BTS</h5>
+
                                 <p>全球最具影響力 K-POP 團體</p>
-                                <button onclick="goProduct('bts-product.html')"
-                                    class="btn btn-outline-dark btn-sm mt-2">
-                                    🛒 周邊商品
-                                </button>
+
                             </div>
+
+                        </a>
+
+                        <div class="pb-4 text-center">
+
+                            <button onclick="goProduct('bts-product.html')" class="btn btn-outline-dark btn-sm">
+
+                                🛒 周邊商品
+
+                            </button>
+
                         </div>
-                    </a>
+
+                    </div>
+
                 </div>
 
                 <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
-                    <a href="illit.html" class="card-link">
-                        <div class="card shadow-sm">
+
+                    <div class="card shadow-sm">
+
+                        <a href="illit.html" class="card-link">
+
                             <img src="images/illit.jpg">
+
                             <div class="card-body text-center">
+
                                 <h5>ILLIT</h5>
+
                                 <p>新世代女團・清新夢幻風格</p>
-                                <a href="illit-product.html" class="btn btn-outline-dark btn-sm mt-2">
-                                    🛒 周邊商品
-                                </a>
+
                             </div>
+
+                        </a>
+
+                        <div class="pb-4 text-center">
+
+                            <button onclick="goProduct('illit-product.html')" class="btn btn-outline-dark btn-sm">
+
+                                🛒 周邊商品
+
+                            </button>
+
                         </div>
-                    </a>
+
+                    </div>
+
                 </div>
 
                 <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
-                    <a href="fromis_9.html" class="card-link">
-                        <div class="card shadow-sm">
+
+                    <div class="card shadow-sm">
+
+                        <a href="fromis_9.html" class="card-link">
+
                             <img src="images/fromis_9.jpg">
+
                             <div class="card-body text-center">
+
                                 <h5>fromis_9</h5>
+
                                 <p>清新女團・青春系音樂風格</p>
-                                <a href="fromis_9-product.html" class="btn btn-outline-dark btn-sm mt-2">
-                                    🛒 周邊商品
-                                </a>
+
                             </div>
+
+                        </a>
+
+                        <div class="pb-4 text-center">
+
+                            <button onclick="goProduct('fromis_9-product.html')" class="btn btn-outline-dark btn-sm">
+
+                                🛒 周邊商品
+
+                            </button>
+
                         </div>
-                    </a>
+
+                    </div>
+
                 </div>
 
                 <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
-                    <a href="le-sserafim.html" class="card-link">
-                        <div class="card shadow-sm">
+
+                    <div class="card shadow-sm">
+
+                        <a href="le-sserafim.html" class="card-link">
+
                             <img src="images/le-sserafim.jpg">
+
                             <div class="card-body text-center">
+
                                 <h5>LE SSERAFIM</h5>
+
                                 <p>實力派女團・自信成長風格</p>
-                                <a href="lesserafim-product.html" class="btn btn-outline-dark btn-sm mt-2">
-                                    🛒 周邊商品
-                                </a>
+
                             </div>
+
+                        </a>
+
+                        <div class="pb-4 text-center">
+
+                            <button onclick="goProduct('lesserafim-product.html')" class="btn btn-outline-dark btn-sm">
+
+                                🛒 周邊商品
+
+                            </button>
+
                         </div>
-                    </a>
+
+                    </div>
+
                 </div>
 
                 <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
-                    <a href="andteam.html" class="card-link">
-                        <div class="card shadow-sm">
-                            <img src="images/&TEAM.jpeg">
-                            <div class="card-body text-center">
-                                <h5>&TEAM</h5>
-                                <p>多國籍全球化男團</p>
-                                <a href="andteam-product.html" class="btn btn-outline-dark btn-sm mt-2">
-                                    🛒 周邊商品
-                                </a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
 
-                <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">
-                    <a href="BOYNEXTDOOR.html" class="card-link">
-                        <div class="card shadow-sm">
-                            <img src="images/BOYNEXTDOOR.webp">
-                            <div class="card-body text-center">
-                                <h5>BOYNEXTDOOR</h5>
-                                <p>鄰家男孩風格男團</p>
-                                <a href="boynextdoor-product.html" class="btn btn-outline-dark btn-sm mt-2">
-                                    🛒 周邊商品
-                                </a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                    <div class="card shadow-sm">
 
-                <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.6s">
-                    <a href="seventeen.html" class="card-link">
-                        <div class="card shadow-sm">
-                            <img src="images/seventeen.png">
-                            <div class="card-body text-center">
-                                <h5>SEVENTEEN</h5>
-                                <p>自製型男團・13人完整體</p>
-                                <a href="seventeen-product.html" class="btn btn-outline-dark btn-sm mt-2">
-                                    🛒 周邊商品
-                                </a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                        <a href="txt.html" class="card-link">
 
-                <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.7s">
-                    <a href="enhypen.html" class="card-link">
-                        <div class="card shadow-sm">
-                            <img src="images/enhypen.jpg">
-                            <div class="card-body text-center">
-                                <h5>ENHYPEN</h5>
-                                <p>生存節目出道・吸血鬼世界觀</p>
-                                <a href="enhypen-product.html" class="btn btn-outline-dark btn-sm mt-2">
-                                    🛒 周邊商品
-                                </a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.8s">
-                    <a href="txt.html" class="card-link">
-                        <div class="card shadow-sm">
                             <img src="images/txt.jpg">
+
                             <div class="card-body text-center">
+
                                 <h5>TXT</h5>
+
                                 <p>青春成長系男團</p>
-                                <a href="txt-product.html" class="btn btn-outline-dark btn-sm mt-2">
-                                    🛒 周邊商品
-                                </a>
+
                             </div>
+
+                        </a>
+
+                        <div class="pb-4 text-center">
+
+                            <button onclick="goProduct('txt-product.html')" class="btn btn-outline-dark btn-sm">
+
+                                🛒 周邊商品
+
+                            </button>
+
                         </div>
-                    </a>
+
+                    </div>
+
                 </div>
 
             </div>
+
         </div>
+
     </section>
 
     <footer class="text-center text-light py-4" style="background:#111;">
-        © 2026 HYBE Fan Page
-    </footer>
 
+        © 2026 HYBE Fan Page
+
+    </footer>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery-4.0.0.js"></script>
@@ -315,22 +365,35 @@
     <script src="js/login.js"></script>
 
     <script>
-        function goProduct(page) {
+        new WOW().init();
 
-            // 檢查登入狀態
+        function goProduct(page) {
             let isLogin = localStorage.getItem("login");
 
-            // 尚未登入
             if (isLogin !== "true") {
 
                 Swal.fire({
+
                     icon: 'warning',
+
                     title: '尚未登入',
-                    text: '請先登入會員才能查看商品！',
-                    confirmButtonText: '前往登入'
+
+                    text: '登入會員後即可購買 HYBE 周邊商品',
+
+                    showCancelButton: true,
+
+                    confirmButtonText: '立即登入',
+
+                    cancelButtonText: '稍後再說',
+
+                    reverseButtons: true
+
                 }).then((result) => {
 
-                    if (result.isConfirmed) {
+                    // 點擊登入
+                    if (result.isConfirmed) {               
+                        localStorage.setItem("redirectPage", page);
+
                         window.location.href = "login.html";
                     }
 
@@ -339,9 +402,9 @@
                 return;
             }
 
-            // 已登入 → 前往商品頁
             window.location.href = page;
         }
+
     </script>
 
 </body>

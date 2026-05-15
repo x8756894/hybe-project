@@ -79,7 +79,7 @@
             .hero h1 {
                 font-size: 2rem;
             }
-            
+
             .d-flex.justify-content-between {
                 flex-direction: column;
                 align-items: flex-start;
@@ -140,14 +140,23 @@
                 </div>
 
                 <div class="d-flex align-items-center gap-2 mt-2 mt-md-0">
+                    <div id="guestBox">
+                        <a href="register.html" class="btn btn-dark btn-sm">
+                            註冊
+                        </a>
 
-                    <a href="register.html" class="btn btn-dark btn-sm">
-                        註冊
-                    </a>
+                        <a href="login.html" class="btn btn-outline-dark btn-sm">
+                            登入
+                        </a>
+                    </div>
 
-                    <a href="login.html" class="btn btn-outline-dark btn-sm">
-                        登入
-                    </a>
+
+                    <div id="userBox" style="display:none;">
+                        歡迎 <b id="showUser"></b>
+                        <button class="btn btn-danger btn-sm ms-2" onclick="logout()">
+                            登出
+                        </button>
+                    </div>
 
                 </div>
 
